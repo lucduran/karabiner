@@ -99,11 +99,6 @@
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_semicolon",
-                    "value": 0
-                  },
-                  {
-                    "type": "variable_if",
                     "name": "hyper_sublayer_o",
                     "value": 0
                   },
@@ -174,89 +169,6 @@
                   {
                     "type": "variable_if",
                     "name": "hyper_sublayer_p",
-                    "value": 0
-                  },
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_semicolon",
-                    "value": 0
-                  },
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_o",
-                    "value": 0
-                  },
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_b",
-                    "value": 0
-                  },
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_w",
-                    "value": 0
-                  },
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_s",
-                    "value": 0
-                  },
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_v",
-                    "value": 0
-                  },
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_c",
-                    "value": 0
-                  },
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_r",
-                    "value": 0
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "description": "Hyper Key + semicolon",
-            "manipulators": [
-              {
-                "to": [
-                  {
-                    "key_code": "delete_or_backspace"
-                  }
-                ],
-                "type": "basic",
-                "from": {
-                  "key_code": "semicolon",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper",
-                    "value": 1
-                  },
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_spacebar",
-                    "value": 0
-                  },
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_p",
-                    "value": 0
-                  },
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_semicolon",
                     "value": 0
                   },
                   {
@@ -337,11 +249,6 @@
                   {
                     "type": "variable_if",
                     "name": "hyper_sublayer_p",
-                    "value": 0
-                  },
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_semicolon",
                     "value": 0
                   },
                   {
@@ -692,30 +599,6 @@
                     "value": 1
                   }
                 ]
-              },
-              {
-                "to": [
-                  {
-                    "shell_command": "open -a 'System Settings.app'"
-                  }
-                ],
-                "description": "Open -a 'System Settings.app'",
-                "type": "basic",
-                "from": {
-                  "key_code": "y",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_o",
-                    "value": 1
-                  }
-                ]
               }
             ]
           },
@@ -758,11 +641,6 @@
                   {
                     "type": "variable_if",
                     "name": "hyper_sublayer_p",
-                    "value": 0
-                  },
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_semicolon",
                     "value": 0
                   },
                   {
@@ -1180,11 +1058,6 @@
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_semicolon",
-                    "value": 0
-                  },
-                  {
-                    "type": "variable_if",
                     "name": "hyper_sublayer_o",
                     "value": 0
                   },
@@ -1260,7 +1133,7 @@
                 ],
                 "type": "basic",
                 "from": {
-                  "key_code": "i",
+                  "key_code": "u",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -1287,7 +1160,7 @@
                 ],
                 "type": "basic",
                 "from": {
-                  "key_code": "o",
+                  "key_code": "i",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -1347,11 +1220,6 @@
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_semicolon",
-                    "value": 0
-                  },
-                  {
-                    "type": "variable_if",
                     "name": "hyper_sublayer_o",
                     "value": 0
                   },
@@ -1383,29 +1251,6 @@
                   {
                     "type": "variable_if",
                     "name": "hyper",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "shell_command": "/opt/homebrew/bin/brew services restart sketchybar"
-                  }
-                ],
-                "type": "basic",
-                "from": {
-                  "key_code": "b",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_s",
                     "value": 1
                   }
                 ]
@@ -1677,30 +1522,6 @@
               {
                 "to": [
                   {
-                    "shell_command": "open raycast://extensions/raycast/system/quit-all-applications"
-                  }
-                ],
-                "description": "Open raycast://extensions/raycast/system/quit-all-applications",
-                "type": "basic",
-                "from": {
-                  "key_code": "q",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_s",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
                     "shell_command": "open raycast://extensions/yakitrak/do-not-disturb/toggle"
                   }
                 ],
@@ -1767,11 +1588,6 @@
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_semicolon",
-                    "value": 0
-                  },
-                  {
-                    "type": "variable_if",
                     "name": "hyper_sublayer_o",
                     "value": 0
                   },
@@ -1815,7 +1631,7 @@
                 ],
                 "type": "basic",
                 "from": {
-                  "key_code": "j",
+                  "key_code": "h",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -1838,7 +1654,7 @@
                 ],
                 "type": "basic",
                 "from": {
-                  "key_code": "k",
+                  "key_code": "j",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -1861,7 +1677,7 @@
                 ],
                 "type": "basic",
                 "from": {
-                  "key_code": "l",
+                  "key_code": "k",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -1884,7 +1700,7 @@
                 ],
                 "type": "basic",
                 "from": {
-                  "key_code": "semicolon",
+                  "key_code": "l",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -1902,7 +1718,7 @@
               {
                 "to": [
                   {
-                    "key_code": "m",
+                    "key_code": "f",
                     "modifiers": [
                       "right_control"
                     ]
@@ -1928,33 +1744,7 @@
               {
                 "to": [
                   {
-                    "key_code": "n",
-                    "modifiers": [
-                      "right_control"
-                    ]
-                  }
-                ],
-                "type": "basic",
-                "from": {
-                  "key_code": "n",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_v",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "key_code": "s",
+                    "key_code": "j",
                     "modifiers": [
                       "right_control"
                     ]
@@ -1980,12 +1770,39 @@
               {
                 "to": [
                   {
+                    "key_code": "d",
+                    "modifiers": [
+                      "right_shift",
+                      "right_command"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "d",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_v",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
                     "key_code": "page_down"
                   }
                 ],
                 "type": "basic",
                 "from": {
-                  "key_code": "i",
+                  "key_code": "u",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -2008,7 +1825,7 @@
                 ],
                 "type": "basic",
                 "from": {
-                  "key_code": "o",
+                  "key_code": "i",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -2064,11 +1881,6 @@
                   {
                     "type": "variable_if",
                     "name": "hyper_sublayer_p",
-                    "value": 0
-                  },
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_semicolon",
                     "value": 0
                   },
                   {
@@ -2139,7 +1951,7 @@
                 ],
                 "type": "basic",
                 "from": {
-                  "key_code": "m",
+                  "key_code": "n",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -2162,7 +1974,7 @@
                 ],
                 "type": "basic",
                 "from": {
-                  "key_code": "n",
+                  "key_code": "b",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -2218,11 +2030,6 @@
                   {
                     "type": "variable_if",
                     "name": "hyper_sublayer_p",
-                    "value": 0
-                  },
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_semicolon",
                     "value": 0
                   },
                   {
