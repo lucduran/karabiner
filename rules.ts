@@ -19,8 +19,8 @@ const rules: KarabinerRules[] = [
           {
             set_variable: {
               name: "hyper",
-              value: 1,
-            },
+              value: 1
+            }
           },
         ],
         to_after_key_up: [
@@ -38,68 +38,97 @@ const rules: KarabinerRules[] = [
         ],
         type: "basic",
       },
-      //      {
-      //        type: "basic",
-      //        description: "Disable CMD + Tab to force Hyper Key usage",
-      //        from: {
-      //          key_code: "tab",
-      //          modifiers: {
-      //            mandatory: ["left_command"],
-      //          },
-      //        },
-      //        to: [
-      //          {
-      //            key_code: "tab",
-      //          },
-      //        ],
-      //      },
+      {
+        type: "basic",
+        description: "Disable CMD + Tab to force Hyper Key usage",
+        from: {
+          key_code: "tab",
+          modifiers: {
+            mandatory: ["left_command"],
+          },
+        },
+        to: [
+          {
+            key_code: "tab",
+          },
+        ],
+      },
     ],
   },
   ...createHyperSubLayers({
-    spacebar: open(
-      "raycast://extensions/stellate/mxstbr-commands/create-notion-todo"
-    ),
-    // b = "B"rowse
-    b: {
-      t: open("https://twitter.com"),
-      // Quarterly "P"lan
-      p: open("https://qrtr.ly/plan"),
-      y: open("https://news.ycombinator.com"),
-      f: open("https://facebook.com"),
-      r: open("https://reddit.com"),
-    },
-    // o = "Open" applications
-    o: {
-      1: app("1Password"),
-      g: app("Google Chrome"),
-      c: app("Notion Calendar"),
-      v: app("Visual Studio Code"),
-      d: app("Discord"),
-      s: app("Slack"),
-      e: app("Superhuman"),
-      n: app("Notion"),
-      t: app("Terminal"),
-      // Open todo list managed via *H*ypersonic
-      h: open(
-        "notion://www.notion.so/stellatehq/7b33b924746647499d906c55f89d5026"
-      ),
-      z: app("zoom.us"),
-      // "M"essages
-      m: app("Texts"),
-      f: app("Finder"),
-      r: app("Texts"),
-      // "i"Message
-      i: app("Texts"),
-      p: app("Spotify"),
-      a: app("iA Presenter"),
-      // "W"hatsApp has been replaced by Texts
-      w: open("Texts"),
-      l: open(
-        "raycast://extensions/stellate/mxstbr-commands/open-mxs-is-shortlink"
-      ),
+    spacebar: app("GCal for Google Calendar"),
+
+    p: open("raycast://extensions/thomas/spotify-controls/play"),
+
+    semicolon: {
+      to: [
+        {
+          key_code: "delete_or_backspace",
+        },
+      ],
     },
 
-    // w = "Window" via rectangle.app
+    // o = "Open" applications
+    o: {
+      b: app("Brave Browser"),
+      v: app("Visual Studio Code"),
+      m: app("Messages"),
+      f: app("Finder"),
+      t: app("iTerm"),
+      n: app("Notes"),
+      l: app("Prism Launcher"),
+      p: app("Spotify"),
+      d: app("Discord"),
+      a: app("Airtable"),
+      g: app("Google Chrome"),
+      s: app("Slack"),
+      c: app("ChatGPT"),
+      y: app("System Settings"),
+    },
+
+    // b = "B"rowse
+    b: {
+      y: open("https://www.youtube.com"),
+      h: open("https://www.hckrnws.com/top/1"),
+      c: open("https://chat.openai.com"),
+      t: open("https://www.typingclub.com/sportal/program-3.game"),
+      s: open("https://client.schwab.com/clientapps/accounts/summary/"),
+      n: open("https://app.ynab.com/fe910454-0ccd-4e4d-95f5-fc6f1545d0bf/budget"),
+      m: open("https://www.google.com/maps"),
+      e: open("https://mail.google.com/mail/u/0/"),
+      a: open("https://www.amazon.com/"),
+      i: open("https://www.instagram.com/"),
+      l: open("https://www.linkedin.com/"),
+
+      // "W"eWeb
+      w: {
+        to: [
+          {
+            shell_command: `open -a "Google Chrome" "https://editor.weweb.io/47aa0874-ee85-4f94-bdd0-4d864392c9a1"`
+          }
+        ]
+      },
+
+      // "X"ano
+      x: {
+        to: [
+          {
+            shell_command: `open -a "Google Chrome" "https://xdw0-sipj-awhp.n7.xano.io/workspace/3-0/dashboard"`
+          }
+        ]
+      },
+
+      // "F"igma
+      f: {
+        to: [
+          {
+            shell_command: `open -a "Google Chrome" "https://www.figma.com/board/9GuvEeOWjf71XS4jRBeFi1/renter-application-flow?node-id=3-82&t=YPZJ5hcjYQVxLqj4-0"`
+          }
+        ]
+      },
+    },
+
+    // w = "Window" will be via Amethyst.app
     w: {
       semicolon: {
         description: "Window: Hide",
@@ -110,14 +139,7 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      y: rectangle("previous-display"),
-      o: rectangle("next-display"),
-      k: rectangle("top-half"),
-      j: rectangle("bottom-half"),
-      h: rectangle("left-half"),
-      l: rectangle("right-half"),
-      f: rectangle("maximize"),
-      u: {
+      i: {
         description: "Window: Previous Tab",
         to: [
           {
@@ -126,7 +148,7 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      i: {
+      o: {
         description: "Window: Next Tab",
         to: [
           {
@@ -135,47 +157,28 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      n: {
-        description: "Window: Next Window",
-        to: [
-          {
-            key_code: "grave_accent_and_tilde",
-            modifiers: ["right_command"],
-          },
-        ],
-      },
-      b: {
-        description: "Window: Back",
-        to: [
-          {
-            key_code: "open_bracket",
-            modifiers: ["right_command"],
-          },
-        ],
-      },
-      // Note: No literal connection. Both f and n are already taken.
-      m: {
-        description: "Window: Forward",
-        to: [
-          {
-            key_code: "close_bracket",
-            modifiers: ["right_command"],
-          },
-        ],
-      },
-      d: {
-        description: "Window: Next display",
-        to: [
-          {
-            key_code: "right_arrow",
-            modifiers: ["right_control", "right_option", "right_command"],
-          },
-        ],
-      },
     },
+
+    // w = "Window" via Rectangle.app
+    /* w: {
+      y: rectangle("previous-display"),
+      o: rectangle("next-display"),
+      k: rectangle("top-half"),
+      j: rectangle("bottom-half"),
+      h: rectangle("left-half"),
+      l: rectangle("right-half"),
+      f: rectangle("maximize"),
+    }, */
 
     // s = "System"
     s: {
+      b: {
+        to: [
+          {
+            shell_command: `/opt/homebrew/bin/brew services restart sketchybar`,
+          },
+        ],
+      },
       u: {
         to: [
           {
@@ -207,6 +210,7 @@ const rules: KarabinerRules[] = [
       l: {
         to: [
           {
+            // Lock screen native shortcut
             key_code: "q",
             modifiers: ["right_control", "right_command"],
           },
@@ -235,8 +239,18 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
+      // Mullvad VPN controls
+      c: open("raycast://script-commands/connect"),
+      d: open("raycast://script-commands/disconnect"),
+
+      // Airpods Pro controls
+      // TODO: Fix extention toggle between wrong modes
+      t: open("raycast://extensions/chrahe/airpods-noise-control/index"),
+
+      q: open("raycast://extensions/raycast/system/quit-all-applications"),
+
       // Turn on Elgato KeyLight
-      y: {
+      /* y: {
         to: [
           {
             shell_command: `curl -H 'Content-Type: application/json' --request PUT --data '{ "numberOfLights": 1, "lights": [ { "on": 1, "brightness": 100, "temperature": 215 } ] }' http://192.168.8.84:9123/elgato/lights`,
@@ -249,70 +263,71 @@ const rules: KarabinerRules[] = [
             shell_command: `curl -H 'Content-Type: application/json' --request PUT --data '{ "numberOfLights": 1, "lights": [ { "on": 0, "brightness": 100, "temperature": 215 } ] }' http://192.168.8.84:9123/elgato/lights`,
           },
         ],
-      },
-      // "D"o not disturb toggle
-      d: open(`raycast://extensions/yakitrak/do-not-disturb/toggle`),
+      }, */
+      // "N"otifications-Do not disturb toggle
+      n: open(`raycast://extensions/yakitrak/do-not-disturb/toggle?launchType=background`),
     },
 
     // v = "moVe" which isn't "m" because we want it to be on the left hand
     // so that hjkl work like they do in vim
     v: {
-      h: {
+      j: {
         to: [{ key_code: "left_arrow" }],
       },
-      j: {
+      k: {
         to: [{ key_code: "down_arrow" }],
       },
-      k: {
+      l: {
         to: [{ key_code: "up_arrow" }],
       },
-      l: {
+      semicolon: {
         to: [{ key_code: "right_arrow" }],
       },
       // Magicmove via homerow.app
       m: {
-        to: [{ key_code: "f", modifiers: ["right_control"] }],
+        to: [{ key_code: "m", modifiers: ["right_control"] }],
+      },
+      // Search via homerow.app
+      n: {
+        to: [{ key_code: "n", modifiers: ["right_control"] }],
       },
       // Scroll mode via homerow.app
       s: {
-        to: [{ key_code: "j", modifiers: ["right_control"] }],
-      },
-      d: {
-        to: [{ key_code: "d", modifiers: ["right_shift", "right_command"] }],
-      },
-      u: {
-        to: [{ key_code: "page_down" }],
+        to: [{ key_code: "s", modifiers: ["right_control"] }],
       },
       i: {
+        to: [{ key_code: "page_down" }],
+      },
+      o: {
         to: [{ key_code: "page_up" }],
       },
     },
 
-    // c = Musi*c* which isn't "m" because we want it to be on the left hand
+    // c = Musi*c* which is not "m" because we want it to be on the left hand
     c: {
       p: {
         to: [{ key_code: "play_or_pause" }],
       },
-      n: {
+      m: {
+        // Next song
         to: [{ key_code: "fastforward" }],
       },
-      b: {
+      n: {
+        // Previous song
         to: [{ key_code: "rewind" }],
       },
     },
 
     // r = "Raycast"
     r: {
-      n: open("raycast://script-commands/dismiss-notifications"),
+      a: open("raycast://extensions/third774/perplexity/ask-perplexity"),
+      // "C"lear notifications
+      c: open("raycast://script-commands/dismiss-notifications"),
       l: open(
         "raycast://extensions/stellate/mxstbr-commands/create-mxs-is-shortlink"
       ),
-      e: open(
-        "raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"
-      ),
-      c: open("raycast://extensions/raycast/system/open-camera"),
+      // m: open("raycast://script-commands/google-maps?arguments=&arguments="),
       p: open("raycast://extensions/raycast/raycast/confetti"),
-      a: open("raycast://extensions/raycast/raycast-ai/ai-chat"),
       s: open("raycast://extensions/peduarte/silent-mention/index"),
       h: open(
         "raycast://extensions/raycast/clipboard-history/clipboard-history"
@@ -324,6 +339,7 @@ const rules: KarabinerRules[] = [
         "raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-2"
       ),
     },
+
   }),
 ];
 
@@ -347,3 +363,14 @@ fs.writeFileSync(
     2
   )
 );
+
+/* Hide Dock
+defaults write com.apple.dock autohide -bool true && killall Dock
+defaults write com.apple.dock autohide-delay -float 1000 && killall Dock
+defaults write com.apple.dock no-bouncing -bool TRUE && killall Dock
+
+defaults write com.apple.dock autohide -bool false && killall Dock
+defaults delete com.apple.dock autohide-delay && killall Dock
+defaults write com.apple.dock no-bouncing -bool FALSE && killall Dock */
+
+// defaults write com.knollsoft.Rectangle screenEdgeGapTop -int 45
