@@ -1701,10 +1701,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open raycast://extensions/yakitrak/do-not-disturb/toggle"
+                    "shell_command": "open raycast://extensions/yakitrak/do-not-disturb/toggle?launchType=background"
                   }
                 ],
-                "description": "Open raycast://extensions/yakitrak/do-not-disturb/toggle",
+                "description": "Open raycast://extensions/yakitrak/do-not-disturb/toggle?launchType=background",
                 "type": "basic",
                 "from": {
                   "key_code": "n",
