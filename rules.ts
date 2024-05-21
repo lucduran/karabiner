@@ -56,9 +56,16 @@ const rules: KarabinerRules[] = [
     ],
   },
   ...createHyperSubLayers({
-    spacebar: app("GCal for Google Calendar"),
-
     p: open("raycast://extensions/thomas/spotify-controls/play"),
+
+    a: {
+      to: [
+        {
+          key_code: "h",
+          modifiers: ["command"],
+        },
+      ],
+    },
 
     // Remap delete to quote + hyper
     quote: {
@@ -67,6 +74,28 @@ const rules: KarabinerRules[] = [
           key_code: "delete_or_backspace",
         },
       ],
+    },
+
+    spacebar: open("raycast://extensions/raycast/apple-reminders/create-reminder"),
+
+    // h = "H"ome
+    h: {
+      // This will be for controlling my house
+      // Turn on Elgato KeyLight
+      /* y: {
+        to: [
+          {
+            shell_command: `curl -H 'Content-Type: application/json' --request PUT --data '{ "numberOfLights": 1, "lights": [ { "on": 1, "brightness": 100, "temperature": 215 } ] }' http://192.168.8.84:9123/elgato/lights`,
+          },
+        ],
+      },
+      h: {
+        to: [
+          {
+            shell_command: `curl -H 'Content-Type: application/json' --request PUT --data '{ "numberOfLights": 1, "lights": [ { "on": 0, "brightness": 100, "temperature": 215 } ] }' http://192.168.8.84:9123/elgato/lights`,
+          },
+        ],
+      }, */
     },
 
     // o = "Open" applications
@@ -78,14 +107,16 @@ const rules: KarabinerRules[] = [
       t: app("iTerm"),
       n: app("Notes"),
       l: app("Prism Launcher"),
-      k: app("Fabulously Optimized 5.12.0-alpha.4"),
+      semicolon: app("Fabulously Optimized 5.12.0-alpha.4"),
       p: app("Spotify"),
       d: app("Discord"),
-      a: app("Airtable"),
+      // "K"anban
+      k: app("Airtable"),
       g: app("Google Chrome"),
       s: app("Slack"),
-      c: app("ChatGPT"),
-      y: app("System Settings"),
+      c: app("Calendar"),
+      // "A"I
+      a: app("ChatGPT"),
     },
 
     // b = "B"rowse
@@ -306,15 +337,6 @@ const rules: KarabinerRules[] = [
       },
 
       // System navigation
-      spacebar: {
-        description: "Window: Hide",
-        to: [
-          {
-            key_code: "h",
-            modifiers: ["right_command"],
-          },
-        ],
-      },
       q: {
         description: "Quit Current App",
         to: [
@@ -339,6 +361,15 @@ const rules: KarabinerRules[] = [
           {
             key_code: "tab",
             modifiers: ["right_control"],
+          },
+        ],
+      },
+      n: {
+        description: "Browser: New Tab",
+        to: [
+          {
+            key_code: "t",
+            modifiers: ["right_command"],
           },
         ],
       },
@@ -408,6 +439,17 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
+      p: {
+        to: [{ key_code: "play_or_pause" }],
+      },
+      m: {
+        // Next song
+        to: [{ key_code: "fastforward" }],
+      },
+      n: {
+        // Previous song
+        to: [{ key_code: "rewind" }],
+      },
       e: {
         to: [
           {
@@ -418,34 +460,23 @@ const rules: KarabinerRules[] = [
         ],
       },
       // Mullvad VPN controls
+      // TODO: Make this a single toggle to remove 'v' key
       c: open("raycast://script-commands/connect"),
-      d: open("raycast://script-commands/disconnect"),
+      v: open("raycast://script-commands/disconnect"),
 
       // Airpods Pro controls
       // TODO: Fix extention toggle between wrong modes
       t: open("raycast://extensions/chrahe/airpods-noise-control/index"),
 
+      // Caffeinate toggle
+      // a = "A"wake
       a: open("raycast://extensions/mooxl/coffee/caffeinateToggle"),
 
+      // Quit all applications
       q: open("raycast://extensions/raycast/system/quit-all-applications"),
 
-      // Turn on Elgato KeyLight
-      /* y: {
-        to: [
-          {
-            shell_command: `curl -H 'Content-Type: application/json' --request PUT --data '{ "numberOfLights": 1, "lights": [ { "on": 1, "brightness": 100, "temperature": 215 } ] }' http://192.168.8.84:9123/elgato/lights`,
-          },
-        ],
-      },
-      h: {
-        to: [
-          {
-            shell_command: `curl -H 'Content-Type: application/json' --request PUT --data '{ "numberOfLights": 1, "lights": [ { "on": 0, "brightness": 100, "temperature": 215 } ] }' http://192.168.8.84:9123/elgato/lights`,
-          },
-        ],
-      }, */
       // "N"otifications-Do not disturb toggle
-      n: open(`raycast://extensions/yakitrak/do-not-disturb/toggle?launchType=background`),
+      d: open(`raycast://extensions/yakitrak/do-not-disturb/toggle?launchType=background`),
     },
 
     // v = "moVe" which isn't "m" because we want it to be on the left hand
@@ -463,7 +494,7 @@ const rules: KarabinerRules[] = [
       semicolon: {
         to: [{ key_code: "right_arrow" }],
       },
-      // Magicmove via Homerow.app
+      // Magicmove via homerow.app
       m: {
         to: [{ key_code: "m", modifiers: ["right_control"] }],
       },
@@ -480,21 +511,6 @@ const rules: KarabinerRules[] = [
       },
       o: {
         to: [{ key_code: "page_up" }],
-      },
-    },
-
-    // c = Musi*c* which is not "m" because we want it to be on the left hand
-    c: {
-      p: {
-        to: [{ key_code: "play_or_pause" }],
-      },
-      m: {
-        // Next song
-        to: [{ key_code: "fastforward" }],
-      },
-      n: {
-        // Previous song
-        to: [{ key_code: "rewind" }],
       },
     },
 
@@ -549,8 +565,7 @@ defaults write com.apple.dock autohide -bool true && killall Dock
 defaults write com.apple.dock autohide-delay -float 1000 && killall Dock
 defaults write com.apple.dock no-bouncing -bool TRUE && killall Dock
 
+Show Dock
 defaults write com.apple.dock autohide -bool false && killall Dock
 defaults delete com.apple.dock autohide-delay && killall Dock
 defaults write com.apple.dock no-bouncing -bool FALSE && killall Dock */
-
-// defaults write com.knollsoft.Rectangle screenEdgeGapTop -int 45

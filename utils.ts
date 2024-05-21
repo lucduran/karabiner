@@ -130,12 +130,11 @@ export function createHyperSubLayers(subLayers: {
                   name: "hyper",
                   value: 1,
                 },
-                ...allSubLayerVariables
-                  .map((subLayerVariable) => ({
-                    type: "variable_if" as const,
-                    name: subLayerVariable,
-                    value: 0,
-                  })),
+                ...allSubLayerVariables.map((subLayerVariable) => ({
+                  type: "variable_if" as const,
+                  name: subLayerVariable,
+                  value: 0,
+                })),
               ],
             },
           ],
@@ -166,20 +165,6 @@ export function open(what: string): LayerCommand {
       },
     ],
     description: `Open ${what}`,
-  };
-}
-
-/**
- * Shortcut for managing window sizing with Rectangle
- */
-export function rectangle(name: string): LayerCommand {
-  return {
-    to: [
-      {
-        shell_command: `open -g rectangle://execute-action?name=${name}`,
-      },
-    ],
-    description: `Window: ${name}`,
   };
 }
 
