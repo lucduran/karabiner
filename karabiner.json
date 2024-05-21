@@ -1163,7 +1163,7 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a \"Google Chrome\" \"https://www.figma.com/board/9GuvEeOWjf71XS4jRBeFi1/renter-application-flow?node-id=3-82&t=YPZJ5hcjYQVxLqj4-0\""
+                    "shell_command": "open -a \"Google Chrome\" \"https://www.figma.com/board/9GuvEeOWjf71XS4jRBeFi1/renter-application-flow?node-id=3-82&t=YPZJ5hcjYQVxLqj4-0\", \"https://www.figma.com/design/JHAHj3Q6kmhjsVxoQwK0JS/Rz-USWDS?node-id=0-1&t=g1qpMw2jIyMMFMoq-0\""
                   }
                 ],
                 "type": "basic",
