@@ -1307,7 +1307,7 @@
                     "key_code": "j",
                     "modifiers": [
                       "option",
-                      "command"
+                      "shift"
                     ]
                   }
                 ],
@@ -1335,7 +1335,7 @@
                     "key_code": "semicolon",
                     "modifiers": [
                       "option",
-                      "command"
+                      "shift"
                     ]
                   }
                 ],
@@ -1419,7 +1419,7 @@
                     "key_code": "u",
                     "modifiers": [
                       "option",
-                      "command"
+                      "shift"
                     ]
                   }
                 ],
@@ -1447,7 +1447,7 @@
                     "key_code": "p",
                     "modifiers": [
                       "option",
-                      "command"
+                      "shift"
                     ]
                   }
                 ],

@@ -156,7 +156,7 @@ const rules: KarabinerRules[] = [
         to: [
           {
             key_code: "j",
-            modifiers: ["option", "command"],
+            modifiers: ["option", "shift"],
           },
         ],
       },
@@ -165,7 +165,7 @@ const rules: KarabinerRules[] = [
         to: [
           {
             key_code: "semicolon",
-            modifiers: ["option", "command"],
+            modifiers: ["option", "shift"],
           },
         ],
       },
@@ -194,7 +194,7 @@ const rules: KarabinerRules[] = [
         to: [
           {
             key_code: "u",
-            modifiers: ["option", "command"],
+            modifiers: ["option", "shift"],
           },
         ],
       },
@@ -203,7 +203,7 @@ const rules: KarabinerRules[] = [
         to: [
           {
             key_code: "p",
-            modifiers: ["option", "command"],
+            modifiers: ["option", "shift"],
           },
         ],
       },
