@@ -60,6 +60,7 @@ const rules: KarabinerRules[] = [
 
     p: open("raycast://extensions/thomas/spotify-controls/play"),
 
+    // Remap quote to backspace with hyper
     quote: {
       to: [
         {
@@ -129,8 +130,17 @@ const rules: KarabinerRules[] = [
       },
     },
 
-    // w = "Window" will be via Amethyst.app
+    // w = "Window" via Amethyst.app
     w: {
+      z: {
+        description: "Amethyst: Restart Amethyst",
+        to: [
+          {
+            key_code: "z",
+            modifiers: ["option", "control", "shift"],
+          },
+        ],
+      },
       j: {
         description: "Amethyst: Resize Window Left",
         to: [
@@ -213,17 +223,6 @@ const rules: KarabinerRules[] = [
         ],
       },
     },
-
-    // w = "Window" via Rectangle.app
-    /* w: {
-      y: rectangle("previous-display"),
-      o: rectangle("next-display"),
-      k: rectangle("top-half"),
-      j: rectangle("bottom-half"),
-      h: rectangle("left-half"),
-      l: rectangle("right-half"),
-      f: rectangle("maximize"),
-    }, */
 
     // s = "System"
     s: {
@@ -338,7 +337,7 @@ const rules: KarabinerRules[] = [
       semicolon: {
         to: [{ key_code: "right_arrow" }],
       },
-      // Magicmove via homerow.app
+      // Magicmove via Homerow.app
       m: {
         to: [{ key_code: "m", modifiers: ["right_control"] }],
       },
