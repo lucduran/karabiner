@@ -552,6 +552,30 @@
               {
                 "to": [
                   {
+                    "shell_command": "open -a 'Fabulously Optimized 5.12.0-alpha.4.app'"
+                  }
+                ],
+                "description": "Open -a 'Fabulously Optimized 5.12.0-alpha.4.app'",
+                "type": "basic",
+                "from": {
+                  "key_code": "k",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_o",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
                     "shell_command": "open -a 'Spotify.app'"
                   }
                 ],

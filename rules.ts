@@ -78,6 +78,7 @@ const rules: KarabinerRules[] = [
       t: app("iTerm"),
       n: app("Notes"),
       l: app("Prism Launcher"),
+      k: app("Fabulously Optimized 5.12.0-alpha.4"),
       p: app("Spotify"),
       d: app("Discord"),
       a: app("Airtable"),
