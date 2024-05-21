@@ -217,7 +217,7 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      t: {
+      g: {
         description: "Amethyst: Toggle Float for Focused Window",
         to: [
           {
@@ -248,8 +248,17 @@ const rules: KarabinerRules[] = [
       },
 
       // Layout change
+      t: {
+        description: "Amethyst: Select 'Tall' Layout",
+        to: [
+          {
+            key_code: "t",
+            modifiers: ["option", "shift"],
+          },
+        ],
+      },
       f: {
-        description: "Amethyst: Toggle 'Fullscreen' Layout",
+        description: "Amethyst: Select 'Fullscreen' Layout",
         to: [
           {
             key_code: "f",
@@ -257,8 +266,8 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      g: {
-        description: "Amethyst: Toggle 'Tall' Layout",
+      c: {
+        description: "Amethyst: Select 'Column' Layout",
         to: [
           {
             key_code: "g",
