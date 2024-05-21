@@ -99,6 +99,7 @@ const rules: KarabinerRules[] = [
       a: open("https://www.amazon.com/"),
       i: open("https://www.instagram.com/"),
       l: open("https://www.linkedin.com/"),
+      g: open("https://github.com/lucduran/"),
 
       // "W"eWeb
       w: {
