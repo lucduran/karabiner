@@ -2165,52 +2165,6 @@
               {
                 "to": [
                   {
-                    "key_code": "play_or_pause"
-                  }
-                ],
-                "type": "basic",
-                "from": {
-                  "key_code": "p",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_s",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "key_code": "fastforward"
-                  }
-                ],
-                "type": "basic",
-                "from": {
-                  "key_code": "semicolon",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_s",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
                     "key_code": "spacebar",
                     "modifiers": [
                       "right_control",
@@ -2293,6 +2247,30 @@
                 "type": "basic",
                 "from": {
                   "key_code": "t",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_s",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open raycast://extensions/mooxl/coffee/caffeinateToggle"
+                  }
+                ],
+                "description": "Open raycast://extensions/mooxl/coffee/caffeinateToggle",
+                "type": "basic",
+                "from": {
+                  "key_code": "a",
                   "modifiers": {
                     "optional": [
                       "any"

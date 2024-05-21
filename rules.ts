@@ -408,20 +408,6 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      p: {
-        to: [
-          {
-            key_code: "play_or_pause",
-          },
-        ],
-      },
-      semicolon: {
-        to: [
-          {
-            key_code: "fastforward",
-          },
-        ],
-      },
       e: {
         to: [
           {
@@ -438,6 +424,8 @@ const rules: KarabinerRules[] = [
       // Airpods Pro controls
       // TODO: Fix extention toggle between wrong modes
       t: open("raycast://extensions/chrahe/airpods-noise-control/index"),
+
+      a: open("raycast://extensions/mooxl/coffee/caffeinateToggle"),
 
       q: open("raycast://extensions/raycast/system/quit-all-applications"),
 
