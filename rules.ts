@@ -60,7 +60,7 @@ const rules: KarabinerRules[] = [
 
     p: open("raycast://extensions/thomas/spotify-controls/play"),
 
-    // Remap quote to backspace with hyper
+    // Remap delete to quote + hyper
     quote: {
       to: [
         {
@@ -306,7 +306,7 @@ const rules: KarabinerRules[] = [
       },
 
       // System navigation
-      h: {
+      spacebar: {
         description: "Window: Hide",
         to: [
           {
@@ -339,6 +339,24 @@ const rules: KarabinerRules[] = [
           {
             key_code: "tab",
             modifiers: ["right_control"],
+          },
+        ],
+      },
+      3: {
+        description: "Browser: Go Back",
+        to: [
+          {
+            key_code: "open_bracket",
+            modifiers: ["right_command"],
+          },
+        ],
+      },
+      4: {
+        description: "Browser: Go Forward",
+        to: [
+          {
+            key_code: "close_bracket",
+            modifiers: ["right_command"],
           },
         ],
       },
