@@ -1,6 +1,6 @@
 import fs from "fs";
 import { KarabinerRules } from "./types";
-import { createHyperSubLayers, app, open, rectangle } from "./utils";
+import { app, createHyperSubLayers, open } from "./utils";
 
 const rules: KarabinerRules[] = [
   // Define the Hyper key itself
@@ -132,12 +132,78 @@ const rules: KarabinerRules[] = [
 
     // w = "Window" via Amethyst.app
     w: {
-      z: {
-        description: "Amethyst: Restart Amethyst",
+      // Focus manipulation
+      k: {
+        description: "Amethyst: Move Focus Counter Clockwise",
         to: [
           {
-            key_code: "z",
-            modifiers: ["option", "control", "shift"],
+            key_code: "k",
+            modifiers: ["option", "shift"],
+          },
+        ],
+      },
+      l: {
+        description: "Amethyst: Move Focus Clockwise",
+        to: [
+          {
+            key_code: "l",
+            modifiers: ["option", "shift"],
+          },
+        ],
+      },
+      j: {
+        description: "Amethyst: Swap Focus To Counter Clockwise Screen",
+        to: [
+          {
+            key_code: "j",
+            modifiers: ["option", "command"],
+          },
+        ],
+      },
+      semicolon: {
+        description: "Amethyst: Swap Focus To Clockwise Screen",
+        to: [
+          {
+            key_code: "semicolon",
+            modifiers: ["option", "command"],
+          },
+        ],
+      },
+
+      // Window swapping
+      i: {
+        description: "Amethyst: Swap Focused Window Counter Clockwise",
+        to: [
+          {
+            key_code: "i",
+            modifiers: ["option", "shift"],
+          },
+        ],
+      },
+      o: {
+        description: "Amethyst: Swap Focused Window Clockwise",
+        to: [
+          {
+            key_code: "o",
+            modifiers: ["option", "shift"],
+          },
+        ],
+      },
+      u: {
+        description: "Amethyst: Swap Focused Window Counter Clockwise Screen",
+        to: [
+          {
+            key_code: "u",
+            modifiers: ["option", "command"],
+          },
+        ],
+      },
+      p: {
+        description: "Amethyst: Swap Focused Window Clockwise Screen",
+        to: [
+          {
+            key_code: "p",
+            modifiers: ["option", "command"],
           },
         ],
       },
@@ -150,8 +216,39 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
+      t: {
+        description: "Amethyst: Toggle Float for Focused Window",
+        to: [
+          {
+            key_code: "t",
+            modifiers: ["option", "shift"],
+          },
+        ],
+      },
+
+      // Window size manipulation
+      comma: {
+        description: "Amethyst: Shrink Main Pane",
+        to: [
+          {
+            key_code: "comma",
+            modifiers: ["option", "shift"],
+          },
+        ],
+      },
+      period: {
+        description: "Amethyst: Expand Main Pane",
+        to: [
+          {
+            key_code: "period",
+            modifiers: ["option", "shift"],
+          },
+        ],
+      },
+
+      // Layout change
       f: {
-        description: "Amethyst: Fullscreen Layout",
+        description: "Amethyst: Toggle 'Fullscreen' Layout",
         to: [
           {
             key_code: "f",
@@ -160,7 +257,7 @@ const rules: KarabinerRules[] = [
         ],
       },
       g: {
-        description: "Amethyst: Binary Space Partitioning Layout",
+        description: "Amethyst: Toggle 'Tall' Layout",
         to: [
           {
             key_code: "g",
@@ -168,42 +265,38 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      j: {
-        description: "Amethyst: Resize Window Left",
+
+      // Spaces manipulation
+      m: {
+        description: "Amethyst: Throw Focused Window to Space Left",
         to: [
           {
-            key_code: "j",
+            key_code: "m",
             modifiers: ["option", "shift"],
           },
         ],
       },
-      k: {
-        description: "Amethyst: Move Focus Clockwise",
+      slash: {
+        description: "Amethyst: Throw Focused Window to Space Right",
         to: [
           {
-            key_code: "k",
+            key_code: "slash",
             modifiers: ["option", "shift"],
           },
         ],
       },
-      l: {
-        description: "Amethyst: Move Focus Counter-Clockwise",
+
+      z: {
+        description: "Amethyst: Restart Amethyst",
         to: [
           {
-            key_code: "l",
+            key_code: "z",
             modifiers: ["option", "shift"],
           },
         ],
       },
-      semicolon: {
-        description: "Amethyst: Resize Window Right",
-        to: [
-          {
-            key_code: "semicolon",
-            modifiers: ["option", "shift"],
-          },
-        ],
-      },
+
+      // System navigation
       h: {
         description: "Window: Hide",
         to: [
@@ -222,7 +315,7 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      i: {
+      e: {
         description: "Window: Previous Tab",
         to: [
           {
@@ -231,7 +324,7 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      o: {
+      r: {
         description: "Window: Next Tab",
         to: [
           {

@@ -1245,20 +1245,215 @@
                 ]
               },
               {
-                "description": "Amethyst: Restart Amethyst",
+                "description": "Amethyst: Move Focus Counter Clockwise",
                 "to": [
                   {
-                    "key_code": "z",
+                    "key_code": "k",
                     "modifiers": [
                       "option",
-                      "control",
                       "shift"
                     ]
                   }
                 ],
                 "type": "basic",
                 "from": {
-                  "key_code": "z",
+                  "key_code": "k",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_w",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "Amethyst: Move Focus Clockwise",
+                "to": [
+                  {
+                    "key_code": "l",
+                    "modifiers": [
+                      "option",
+                      "shift"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "l",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_w",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "Amethyst: Swap Focus To Counter Clockwise Screen",
+                "to": [
+                  {
+                    "key_code": "j",
+                    "modifiers": [
+                      "option",
+                      "command"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "j",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_w",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "Amethyst: Swap Focus To Clockwise Screen",
+                "to": [
+                  {
+                    "key_code": "semicolon",
+                    "modifiers": [
+                      "option",
+                      "command"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "semicolon",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_w",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "Amethyst: Swap Focused Window Counter Clockwise",
+                "to": [
+                  {
+                    "key_code": "i",
+                    "modifiers": [
+                      "option",
+                      "shift"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "i",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_w",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "Amethyst: Swap Focused Window Clockwise",
+                "to": [
+                  {
+                    "key_code": "o",
+                    "modifiers": [
+                      "option",
+                      "shift"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "o",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_w",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "Amethyst: Swap Focused Window Counter Clockwise Screen",
+                "to": [
+                  {
+                    "key_code": "u",
+                    "modifiers": [
+                      "option",
+                      "command"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "u",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_w",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "Amethyst: Swap Focused Window Clockwise Screen",
+                "to": [
+                  {
+                    "key_code": "p",
+                    "modifiers": [
+                      "option",
+                      "command"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "p",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -1302,7 +1497,91 @@
                 ]
               },
               {
-                "description": "Amethyst: Fullscreen Layout",
+                "description": "Amethyst: Toggle Float for Focused Window",
+                "to": [
+                  {
+                    "key_code": "t",
+                    "modifiers": [
+                      "option",
+                      "shift"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "t",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_w",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "Amethyst: Shrink Main Pane",
+                "to": [
+                  {
+                    "key_code": "comma",
+                    "modifiers": [
+                      "option",
+                      "shift"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "comma",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_w",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "Amethyst: Expand Main Pane",
+                "to": [
+                  {
+                    "key_code": "period",
+                    "modifiers": [
+                      "option",
+                      "shift"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "period",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_w",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "Amethyst: Toggle 'Fullscreen' Layout",
                 "to": [
                   {
                     "key_code": "f",
@@ -1330,7 +1609,7 @@
                 ]
               },
               {
-                "description": "Amethyst: Binary Space Partitioning Layout",
+                "description": "Amethyst: Toggle 'Tall' Layout",
                 "to": [
                   {
                     "key_code": "g",
@@ -1358,10 +1637,10 @@
                 ]
               },
               {
-                "description": "Amethyst: Resize Window Left",
+                "description": "Amethyst: Throw Focused Window to Space Left",
                 "to": [
                   {
-                    "key_code": "j",
+                    "key_code": "m",
                     "modifiers": [
                       "option",
                       "shift"
@@ -1370,7 +1649,7 @@
                 ],
                 "type": "basic",
                 "from": {
-                  "key_code": "j",
+                  "key_code": "m",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -1386,10 +1665,10 @@
                 ]
               },
               {
-                "description": "Amethyst: Move Focus Clockwise",
+                "description": "Amethyst: Throw Focused Window to Space Right",
                 "to": [
                   {
-                    "key_code": "k",
+                    "key_code": "slash",
                     "modifiers": [
                       "option",
                       "shift"
@@ -1398,7 +1677,7 @@
                 ],
                 "type": "basic",
                 "from": {
-                  "key_code": "k",
+                  "key_code": "slash",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -1414,10 +1693,10 @@
                 ]
               },
               {
-                "description": "Amethyst: Move Focus Counter-Clockwise",
+                "description": "Amethyst: Restart Amethyst",
                 "to": [
                   {
-                    "key_code": "l",
+                    "key_code": "z",
                     "modifiers": [
                       "option",
                       "shift"
@@ -1426,35 +1705,7 @@
                 ],
                 "type": "basic",
                 "from": {
-                  "key_code": "l",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_w",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "description": "Amethyst: Resize Window Right",
-                "to": [
-                  {
-                    "key_code": "semicolon",
-                    "modifiers": [
-                      "option",
-                      "shift"
-                    ]
-                  }
-                ],
-                "type": "basic",
-                "from": {
-                  "key_code": "semicolon",
+                  "key_code": "z",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -1536,7 +1787,7 @@
                 ],
                 "type": "basic",
                 "from": {
-                  "key_code": "i",
+                  "key_code": "e",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -1563,7 +1814,7 @@
                 ],
                 "type": "basic",
                 "from": {
-                  "key_code": "o",
+                  "key_code": "r",
                   "modifiers": {
                     "optional": [
                       "any"
