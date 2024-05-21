@@ -99,7 +99,7 @@
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_semicolon",
+                    "name": "hyper_sublayer_quote",
                     "value": 0
                   },
                   {
@@ -178,7 +178,7 @@
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_semicolon",
+                    "name": "hyper_sublayer_quote",
                     "value": 0
                   },
                   {
@@ -221,7 +221,7 @@
             ]
           },
           {
-            "description": "Hyper Key + semicolon",
+            "description": "Hyper Key + quote",
             "manipulators": [
               {
                 "to": [
@@ -231,7 +231,7 @@
                 ],
                 "type": "basic",
                 "from": {
-                  "key_code": "semicolon",
+                  "key_code": "quote",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -256,7 +256,7 @@
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_semicolon",
+                    "name": "hyper_sublayer_quote",
                     "value": 0
                   },
                   {
@@ -341,7 +341,7 @@
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_semicolon",
+                    "name": "hyper_sublayer_quote",
                     "value": 0
                   },
                   {
@@ -762,7 +762,7 @@
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_semicolon",
+                    "name": "hyper_sublayer_quote",
                     "value": 0
                   },
                   {
@@ -1204,7 +1204,7 @@
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_semicolon",
+                    "name": "hyper_sublayer_quote",
                     "value": 0
                   },
                   {
@@ -1245,6 +1245,146 @@
                 ]
               },
               {
+                "description": "Amethyst: Resize Window Left",
+                "to": [
+                  {
+                    "key_code": "j",
+                    "modifiers": [
+                      "option",
+                      "shift"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "j",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_w",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "Amethyst: Move Focus Clockwise",
+                "to": [
+                  {
+                    "key_code": "k",
+                    "modifiers": [
+                      "option",
+                      "shift"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "k",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_w",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "Amethyst: Move Focus Counter-Clockwise",
+                "to": [
+                  {
+                    "key_code": "l",
+                    "modifiers": [
+                      "option",
+                      "shift"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "l",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_w",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "Amethyst: Resize Window Right",
+                "to": [
+                  {
+                    "key_code": "semicolon",
+                    "modifiers": [
+                      "option",
+                      "shift"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "semicolon",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_w",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "Amethyst: Fullscreen Layout",
+                "to": [
+                  {
+                    "key_code": "f",
+                    "modifiers": [
+                      "option",
+                      "shift"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "f",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_w",
+                    "value": 1
+                  }
+                ]
+              },
+              {
                 "description": "Window: Hide",
                 "to": [
                   {
@@ -1256,7 +1396,34 @@
                 ],
                 "type": "basic",
                 "from": {
-                  "key_code": "semicolon",
+                  "key_code": "h",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_w",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "Quit Current App",
+                "to": [
+                  {
+                    "key_code": "q",
+                    "modifiers": [
+                      "right_command"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "q",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -1371,7 +1538,7 @@
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_semicolon",
+                    "name": "hyper_sublayer_quote",
                     "value": 0
                   },
                   {
@@ -1791,7 +1958,7 @@
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_semicolon",
+                    "name": "hyper_sublayer_quote",
                     "value": 0
                   },
                   {
@@ -2092,7 +2259,7 @@
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_semicolon",
+                    "name": "hyper_sublayer_quote",
                     "value": 0
                   },
                   {
@@ -2246,7 +2413,7 @@
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_semicolon",
+                    "name": "hyper_sublayer_quote",
                     "value": 0
                   },
                   {

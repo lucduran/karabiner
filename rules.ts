@@ -60,7 +60,7 @@ const rules: KarabinerRules[] = [
 
     p: open("raycast://extensions/thomas/spotify-controls/play"),
 
-    semicolon: {
+    quote: {
       to: [
         {
           key_code: "delete_or_backspace",
@@ -131,11 +131,65 @@ const rules: KarabinerRules[] = [
 
     // w = "Window" will be via Amethyst.app
     w: {
+      j: {
+        description: "Amethyst: Resize Window Left",
+        to: [
+          {
+            key_code: "j",
+            modifiers: ["option", "shift"],
+          },
+        ],
+      },
+      k: {
+        description: "Amethyst: Move Focus Clockwise",
+        to: [
+          {
+            key_code: "k",
+            modifiers: ["option", "shift"],
+          },
+        ],
+      },
+      l: {
+        description: "Amethyst: Move Focus Counter-Clockwise",
+        to: [
+          {
+            key_code: "l",
+            modifiers: ["option", "shift"],
+          },
+        ],
+      },
       semicolon: {
+        description: "Amethyst: Resize Window Right",
+        to: [
+          {
+            key_code: "semicolon",
+            modifiers: ["option", "shift"],
+          },
+        ],
+      },
+      f: {
+        description: "Amethyst: Fullscreen Layout",
+        to: [
+          {
+            key_code: "f",
+            modifiers: ["option", "shift"],
+          },
+        ],
+      },
+      h: {
         description: "Window: Hide",
         to: [
           {
             key_code: "h",
+            modifiers: ["right_command"],
+          },
+        ],
+      },
+      q: {
+        description: "Quit Current App",
+        to: [
+          {
+            key_code: "q",
             modifiers: ["right_command"],
           },
         ],
