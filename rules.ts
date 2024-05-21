@@ -141,6 +141,33 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
+      return_or_enter: {
+        description: "Amethyst: Swap Focused Window with Main Window",
+        to: [
+          {
+            key_code: "return_or_enter",
+            modifiers: ["option", "shift"],
+          },
+        ],
+      },
+      f: {
+        description: "Amethyst: Fullscreen Layout",
+        to: [
+          {
+            key_code: "f",
+            modifiers: ["option", "shift"],
+          },
+        ],
+      },
+      g: {
+        description: "Amethyst: Binary Space Partitioning Layout",
+        to: [
+          {
+            key_code: "g",
+            modifiers: ["option", "shift"],
+          },
+        ],
+      },
       j: {
         description: "Amethyst: Resize Window Left",
         to: [
@@ -173,15 +200,6 @@ const rules: KarabinerRules[] = [
         to: [
           {
             key_code: "semicolon",
-            modifiers: ["option", "shift"],
-          },
-        ],
-      },
-      f: {
-        description: "Amethyst: Fullscreen Layout",
-        to: [
-          {
-            key_code: "f",
             modifiers: ["option", "shift"],
           },
         ],
