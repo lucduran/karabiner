@@ -266,7 +266,7 @@ const rules: KarabinerRules[] = [
         ],
       },
       c: {
-        description: "Amethyst: Select '3 Column Middle' Layout",
+        description: "Amethyst: Select '3 Column Left' Layout",
         to: [
           {
             key_code: "c",
