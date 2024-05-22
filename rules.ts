@@ -58,6 +58,7 @@ const rules: KarabinerRules[] = [
   ...createHyperSubLayers({
     p: open("raycast://extensions/thomas/spotify-controls/play"),
 
+    // Quick window hide
     a: {
       to: [
         {
