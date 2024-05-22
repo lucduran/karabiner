@@ -100,12 +100,23 @@ const rules: KarabinerRules[] = [
 
     // c = musi"C" applications
     c: {
-      p: open("raycast://extensions/mattisssa/spotify-player/togglePlayPause?launchType=background"),
-      m: open('raycast://extensions/mattisssa/spotify-player/next?launchType=background'),
-      n: open('raycast://extensions/mattisssa/spotify-player/previous?launchType=background'),
+      p: {
+        to: [{ key_code: "play_or_pause" }],
+      },
+      m: {
+        // Next song
+        to: [{ key_code: "fastforward" }],
+      },
+      n: {
+        // Previous song
+        to: [{ key_code: "rewind" }],
+      },
       l: open(`raycast://extensions/mattisssa/spotify-player/like?launchType=background`),
       d: open(`raycast://extensions/mattisssa/spotify-player/dislike?launchType=background`),
-      r: open(`raycast://extensions/mattisssa/spotify-player/cycleRepeat?launchType=background`),
+      s: open(`raycast://extensions/mattisssa/spotify-player/toggleShuffle?launchType=background`),
+      r: open(`raycast://extensions/mattisssa/spotify-player/startRadio?launchType=background`),
+      a: open(`raycast://extensions/mattisssa/spotify-player/cycleRepeat?launchType=background`),
+      u: open(`raycast://extensions/mattisssa/spotify-player/copyUrl?launchType=background`),
     },
 
     // o = "Open" applications

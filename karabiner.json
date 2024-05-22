@@ -496,10 +496,9 @@
               {
                 "to": [
                   {
-                    "shell_command": "open raycast://extensions/mattisssa/spotify-player/togglePlayPause?launchType=background"
+                    "key_code": "play_or_pause"
                   }
                 ],
-                "description": "Open raycast://extensions/mattisssa/spotify-player/togglePlayPause?launchType=background",
                 "type": "basic",
                 "from": {
                   "key_code": "p",
@@ -520,10 +519,9 @@
               {
                 "to": [
                   {
-                    "shell_command": "open raycast://extensions/mattisssa/spotify-player/next?launchType=background"
+                    "key_code": "fastforward"
                   }
                 ],
-                "description": "Open raycast://extensions/mattisssa/spotify-player/next?launchType=background",
                 "type": "basic",
                 "from": {
                   "key_code": "m",
@@ -544,10 +542,9 @@
               {
                 "to": [
                   {
-                    "shell_command": "open raycast://extensions/mattisssa/spotify-player/previous?launchType=background"
+                    "key_code": "rewind"
                   }
                 ],
-                "description": "Open raycast://extensions/mattisssa/spotify-player/previous?launchType=background",
                 "type": "basic",
                 "from": {
                   "key_code": "n",
@@ -616,13 +613,85 @@
               {
                 "to": [
                   {
+                    "shell_command": "open raycast://extensions/mattisssa/spotify-player/toggleShuffle?launchType=background"
+                  }
+                ],
+                "description": "Open raycast://extensions/mattisssa/spotify-player/toggleShuffle?launchType=background",
+                "type": "basic",
+                "from": {
+                  "key_code": "s",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_c",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open raycast://extensions/mattisssa/spotify-player/startRadio?launchType=background"
+                  }
+                ],
+                "description": "Open raycast://extensions/mattisssa/spotify-player/startRadio?launchType=background",
+                "type": "basic",
+                "from": {
+                  "key_code": "r",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_c",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
                     "shell_command": "open raycast://extensions/mattisssa/spotify-player/cycleRepeat?launchType=background"
                   }
                 ],
                 "description": "Open raycast://extensions/mattisssa/spotify-player/cycleRepeat?launchType=background",
                 "type": "basic",
                 "from": {
-                  "key_code": "r",
+                  "key_code": "a",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_c",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open raycast://extensions/mattisssa/spotify-player/copyUrl?launchType=background"
+                  }
+                ],
+                "description": "Open raycast://extensions/mattisssa/spotify-player/copyUrl?launchType=background",
+                "type": "basic",
+                "from": {
+                  "key_code": "u",
                   "modifiers": {
                     "optional": [
                       "any"
