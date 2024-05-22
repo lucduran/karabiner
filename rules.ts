@@ -136,7 +136,6 @@ const rules: KarabinerRules[] = [
 
       // Entertainment
       p: app("Spotify"),
-      y: app("YouTube"),
       d: app("Discord"),
       l: app("Prism Launcher"),
       semicolon: app("Fabulously Optimized 5.12.0-alpha.4"),
