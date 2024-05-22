@@ -2234,7 +2234,11 @@
               {
                 "to": [
                   {
-                    "shell_command": "/opt/homebrew/bin/brew services restart sketchybar"
+                    "key_code": "b",
+                    "modifiers": [
+                      "option",
+                      "shift"
+                    ]
                   }
                 ],
                 "type": "basic",

@@ -396,10 +396,12 @@ const rules: KarabinerRules[] = [
 
     // s = "System"
     s: {
+      // Show hidden menu bar icons via Bartender.app
       b: {
         to: [
           {
-            shell_command: `/opt/homebrew/bin/brew services restart sketchybar`,
+            key_code: "b",
+            modifiers: ["option", "shift"],
           },
         ],
       },
