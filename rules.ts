@@ -56,8 +56,6 @@ const rules: KarabinerRules[] = [
     ],
   },
   ...createHyperSubLayers({
-    // Mimic native Apple play key, default behavior is disabled with noTunes.app
-    p: open("raycast://extensions/mattisssa/spotify-player/togglePlayPause"),
 
     // Quick window hide
     a: {
@@ -98,6 +96,16 @@ const rules: KarabinerRules[] = [
           },
         ],
       }, */
+    },
+
+    // c = musi"C" applications
+    c: {
+      p: open("raycast://extensions/mattisssa/spotify-player/togglePlayPause?launchType=background"),
+      m: open('raycast://extensions/mattisssa/spotify-player/next?launchType=background'),
+      n: open('raycast://extensions/mattisssa/spotify-player/previous?launchType=background'),
+      l: open(`raycast://extensions/mattisssa/spotify-player/like?launchType=background`),
+      d: open(`raycast://extensions/mattisssa/spotify-player/dislike?launchType=background`),
+      r: open(`raycast://extensions/mattisssa/spotify-player/cycleRepeat?launchType=background`),
     },
 
     // o = "Open" applications
