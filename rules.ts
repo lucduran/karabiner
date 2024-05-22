@@ -98,19 +98,11 @@ const rules: KarabinerRules[] = [
       }, */
     },
 
-    // c = musi"C" applications
+    // c = musi"C"
     c: {
-      p: {
-        to: [{ key_code: "play_or_pause" }],
-      },
-      m: {
-        // Next song
-        to: [{ key_code: "fastforward" }],
-      },
-      n: {
-        // Previous song
-        to: [{ key_code: "rewind" }],
-      },
+      p: open(`raycast://extensions/mattisssa/spotify-player/togglePlayPause?launchType=background`),
+      m: open(`raycast://extensions/mattisssa/spotify-player/next?launchType=background`),
+      n: open(`raycast://extensions/mattisssa/spotify-player/previous?launchType=background`),
       l: open(`raycast://extensions/mattisssa/spotify-player/like?launchType=background`),
       d: open(`raycast://extensions/mattisssa/spotify-player/dislike?launchType=background`),
       s: open(`raycast://extensions/mattisssa/spotify-player/toggleShuffle?launchType=background`),
@@ -119,26 +111,35 @@ const rules: KarabinerRules[] = [
       u: open(`raycast://extensions/mattisssa/spotify-player/copyUrl?launchType=background`),
     },
 
+    // z = rent"Z"ap
+    z: {
+      // Work
+      s: app("Slack"),
+      g: app("Google Chrome"),
+      k: app("Airtable"),
+    },
+
     // o = "Open" applications
     o: {
       b: app("Brave Browser"),
-      v: app("Visual Studio Code"),
-      m: app("Messages"),
       f: app("Finder"),
-      t: app("iTerm"),
+      m: app("Messages"),
+      s: app("Snapchat"),
+
+      // Productivity
+      c: app("Calendar"),
+      r: app("Reminders"),
+      a: app("ChatGPT"),
       n: app("Notes"),
+      v: app("Visual Studio Code"),
+      t: app("iTerm"),
+
+      // Entertainment
+      p: app("Spotify"),
+      y: app("YouTube"),
+      d: app("Discord"),
       l: app("Prism Launcher"),
       semicolon: app("Fabulously Optimized 5.12.0-alpha.4"),
-      p: app("Spotify"),
-      d: app("Discord"),
-      // "K"anban
-      k: app("Airtable"),
-      g: app("Google Chrome"),
-      s: app("Slack"),
-      c: app("Calendar"),
-      // "A"I
-      a: app("ChatGPT"),
-      r: app("Reminders"),
     },
 
     // b = "B"rowse
