@@ -845,7 +845,7 @@
                 "description": "Open -a 'Google Chrome.app'",
                 "type": "basic",
                 "from": {
-                  "key_code": "g",
+                  "key_code": "c",
                   "modifiers": {
                     "optional": [
                       "any"

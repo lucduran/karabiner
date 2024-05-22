@@ -115,7 +115,7 @@ const rules: KarabinerRules[] = [
     z: {
       // Work
       s: app("Slack"),
-      g: app("Google Chrome"),
+      c: app("Google Chrome"),
       k: app("Airtable"),
     },
 
