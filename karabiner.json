@@ -1475,12 +1475,13 @@
                 ]
               },
               {
-                "description": "Browser: Go Back",
+                "description": "Window: Previous Tab",
                 "to": [
                   {
-                    "key_code": "open_bracket",
+                    "key_code": "tab",
                     "modifiers": [
-                      "right_command"
+                      "right_control",
+                      "right_shift"
                     ]
                   }
                 ],
@@ -1502,12 +1503,12 @@
                 ]
               },
               {
-                "description": "Browser: Go Forward",
+                "description": "Window: Next Tab",
                 "to": [
                   {
-                    "key_code": "close_bracket",
+                    "key_code": "tab",
                     "modifiers": [
-                      "right_command"
+                      "right_control"
                     ]
                   }
                 ],
@@ -2060,13 +2061,39 @@
                 ]
               },
               {
-                "description": "Window: Previous Tab",
+                "description": "Browser: New Tab",
                 "to": [
                   {
-                    "key_code": "tab",
+                    "key_code": "t",
                     "modifiers": [
-                      "right_control",
-                      "right_shift"
+                      "right_command"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "n",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_w",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "Browser: Go Back",
+                "to": [
+                  {
+                    "key_code": "open_bracket",
+                    "modifiers": [
+                      "right_command"
                     ]
                   }
                 ],
@@ -2088,37 +2115,10 @@
                 ]
               },
               {
-                "description": "Window: Next Tab",
+                "description": "Browser: Go Forward",
                 "to": [
                   {
-                    "key_code": "tab",
-                    "modifiers": [
-                      "right_control"
-                    ]
-                  }
-                ],
-                "type": "basic",
-                "from": {
-                  "key_code": "r",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_w",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "description": "Browser: New Tab",
-                "to": [
-                  {
-                    "key_code": "t",
+                    "key_code": "close_bracket",
                     "modifiers": [
                       "right_command"
                     ]
@@ -2126,7 +2126,7 @@
                 ],
                 "type": "basic",
                 "from": {
-                  "key_code": "n",
+                  "key_code": "r",
                   "modifiers": {
                     "optional": [
                       "any"

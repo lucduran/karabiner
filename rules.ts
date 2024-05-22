@@ -348,7 +348,7 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      e: {
+      3: {
         description: "Window: Previous Tab",
         to: [
           {
@@ -357,7 +357,7 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      r: {
+      4: {
         description: "Window: Next Tab",
         to: [
           {
@@ -375,7 +375,7 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      3: {
+      e: {
         description: "Browser: Go Back",
         to: [
           {
@@ -384,7 +384,7 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      4: {
+      r: {
         description: "Browser: Go Forward",
         to: [
           {
