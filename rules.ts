@@ -1,4 +1,4 @@
-import fs from "fs";
+import * as fs from "fs";
 import { KarabinerRules } from "./types";
 import { app, createHyperSubLayers, open } from "./utils";
 
