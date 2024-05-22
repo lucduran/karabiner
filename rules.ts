@@ -56,7 +56,8 @@ const rules: KarabinerRules[] = [
     ],
   },
   ...createHyperSubLayers({
-    p: open("raycast://extensions/thomas/spotify-controls/play"),
+    // Mimic native Apple play key, default behavior is disabled with noTunes.app
+    p: open("raycast://extensions/mattisssa/spotify-player/togglePlayPause"),
 
     // Quick window hide
     a: {

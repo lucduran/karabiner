@@ -68,10 +68,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open raycast://extensions/thomas/spotify-controls/play"
+                    "shell_command": "open raycast://extensions/mattisssa/spotify-player/togglePlayPause"
                   }
                 ],
-                "description": "Open raycast://extensions/thomas/spotify-controls/play",
+                "description": "Open raycast://extensions/mattisssa/spotify-player/togglePlayPause",
                 "type": "basic",
                 "from": {
                   "key_code": "p",
