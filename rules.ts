@@ -111,20 +111,12 @@ const rules: KarabinerRules[] = [
       u: open(`raycast://extensions/mattisssa/spotify-player/copyUrl?launchType=background`),
     },
 
-    // z = rent"Z"ap
-    z: {
-      // Work
-      s: app("Slack"),
-      c: app("Google Chrome"),
-      k: app("Airtable"),
-    },
-
     // o = "Open" applications
     o: {
       b: app("Brave Browser"),
       f: app("Finder"),
       m: app("Messages"),
-      s: app("Snapchat"),
+      h: app("Snapchat"),
 
       // Productivity
       c: app("Calendar"),
@@ -139,6 +131,11 @@ const rules: KarabinerRules[] = [
       d: app("Discord"),
       l: app("Prism Launcher"),
       semicolon: app("Fabulously Optimized 5.12.0-alpha.4"),
+
+      // Work
+      s: app("Slack"),
+      g: app("Google Chrome"),
+      k: app("Airtable"),
     },
 
     // b = "B"rowse
