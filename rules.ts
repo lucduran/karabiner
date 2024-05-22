@@ -56,17 +56,9 @@ const rules: KarabinerRules[] = [
     ],
   },
   ...createHyperSubLayers({
-    p: open("raycast://extensions/thomas/spotify-controls/play"),
+    spacebar: open("raycast://extensions/mblode/quick-event/index"),
 
-    // Quick window hide
-    a: {
-      to: [
-        {
-          key_code: "h",
-          modifiers: ["command"],
-        },
-      ],
-    },
+    p: open("raycast://extensions/thomas/spotify-controls/play"),
 
     // Remap delete to quote + hyper
     quote: {
@@ -77,11 +69,7 @@ const rules: KarabinerRules[] = [
       ],
     },
 
-    spacebar: open("raycast://extensions/raycast/apple-reminders/create-reminder"),
-
-    // h = "H"ome
     h: {
-      // This will be for controlling my house
       // Turn on Elgato KeyLight
       /* y: {
         to: [
@@ -111,13 +99,11 @@ const rules: KarabinerRules[] = [
       semicolon: app("Fabulously Optimized 5.12.0-alpha.4"),
       p: app("Spotify"),
       d: app("Discord"),
-      // "K"anban
       k: app("Airtable"),
       g: app("Google Chrome"),
       s: app("Slack"),
-      c: app("Calendar"),
-      // "A"I
       a: app("ChatGPT"),
+      c: app("Calendar"),
     },
 
     // b = "B"rowse
@@ -338,6 +324,15 @@ const rules: KarabinerRules[] = [
       },
 
       // System navigation
+      spacebar: {
+        description: "Window: Hide",
+        to: [
+          {
+            key_code: "h",
+            modifiers: ["right_command"],
+          },
+        ],
+      },
       q: {
         description: "Quit Current App",
         to: [
@@ -365,15 +360,6 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      n: {
-        description: "Browser: New Tab",
-        to: [
-          {
-            key_code: "t",
-            modifiers: ["right_command"],
-          },
-        ],
-      },
       3: {
         description: "Browser: Go Back",
         to: [
@@ -396,12 +382,10 @@ const rules: KarabinerRules[] = [
 
     // s = "System"
     s: {
-      // Show hidden menu bar icons via Bartender.app
       b: {
         to: [
           {
-            key_code: "b",
-            modifiers: ["option", "shift"],
+            shell_command: `/opt/homebrew/bin/brew services restart sketchybar`,
           },
         ],
       },
@@ -471,11 +455,8 @@ const rules: KarabinerRules[] = [
       // TODO: Fix extention toggle between wrong modes
       t: open("raycast://extensions/chrahe/airpods-noise-control/index"),
 
-      // Caffeinate toggle
-      // a = "A"wake
       a: open("raycast://extensions/mooxl/coffee/caffeinateToggle"),
 
-      // Quit all applications
       q: open("raycast://extensions/raycast/system/quit-all-applications"),
 
       // "N"otifications-Do not disturb toggle
@@ -522,12 +503,8 @@ const rules: KarabinerRules[] = [
       a: open("raycast://extensions/third774/perplexity/ask-perplexity"),
       // "C"lear notifications
       c: open("raycast://script-commands/dismiss-notifications"),
-      l: open(
-        "raycast://extensions/stellate/mxstbr-commands/create-mxs-is-shortlink"
-      ),
       // m: open("raycast://script-commands/google-maps?arguments=&arguments="),
       p: open("raycast://extensions/raycast/raycast/confetti"),
-      s: open("raycast://extensions/peduarte/silent-mention/index"),
       h: open(
         "raycast://extensions/raycast/clipboard-history/clipboard-history"
       ),
@@ -538,7 +515,6 @@ const rules: KarabinerRules[] = [
         "raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-2"
       ),
     },
-
   }),
 ];
 
@@ -568,7 +544,6 @@ defaults write com.apple.dock autohide -bool true && killall Dock
 defaults write com.apple.dock autohide-delay -float 1000 && killall Dock
 defaults write com.apple.dock no-bouncing -bool TRUE && killall Dock
 
-Show Dock
 defaults write com.apple.dock autohide -bool false && killall Dock
 defaults delete com.apple.dock autohide-delay && killall Dock
 defaults write com.apple.dock no-bouncing -bool FALSE && killall Dock */
