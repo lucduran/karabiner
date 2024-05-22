@@ -42,23 +42,6 @@
                   }
                 ],
                 "type": "basic"
-              },
-              {
-                "type": "basic",
-                "description": "Disable CMD + Tab to force Hyper Key usage",
-                "from": {
-                  "key_code": "tab",
-                  "modifiers": {
-                    "mandatory": [
-                      "left_command"
-                    ]
-                  }
-                },
-                "to": [
-                  {
-                    "key_code": "tab"
-                  }
-                ]
               }
             ]
           },
@@ -641,10 +624,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open raycast://extensions/mattisssa/spotify-player/toggleShuffle?launchType=background"
+                    "shell_command": "open raycast://extensions/mattisssa/spotify-player/nowPlaying"
                   }
                 ],
-                "description": "Open raycast://extensions/mattisssa/spotify-player/toggleShuffle?launchType=background",
+                "description": "Open raycast://extensions/mattisssa/spotify-player/nowPlaying",
                 "type": "basic",
                 "from": {
                   "key_code": "s",
@@ -2955,10 +2938,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open raycast://extensions/mooxl/coffee/caffeinateToggle"
+                    "shell_command": "open raycast://extensions/mooxl/coffee/caffeinateToggle?launchType=background"
                   }
                 ],
-                "description": "Open raycast://extensions/mooxl/coffee/caffeinateToggle",
+                "description": "Open raycast://extensions/mooxl/coffee/caffeinateToggle?launchType=background",
                 "type": "basic",
                 "from": {
                   "key_code": "a",
@@ -2979,10 +2962,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open raycast://extensions/raycast/system/quit-all-applications"
+                    "shell_command": "open raycast://extensions/raycast/system/quit-all-applications?launchType=background"
                   }
                 ],
-                "description": "Open raycast://extensions/raycast/system/quit-all-applications",
+                "description": "Open raycast://extensions/raycast/system/quit-all-applications?launchType=background",
                 "type": "basic",
                 "from": {
                   "key_code": "q",
@@ -3433,10 +3416,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-1"
+                    "shell_command": "open raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-1?launchType=background"
                   }
                 ],
-                "description": "Open raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-1",
+                "description": "Open raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-1?launchType=background",
                 "type": "basic",
                 "from": {
                   "key_code": "1",
@@ -3457,10 +3440,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-2"
+                    "shell_command": "open raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-2?launchType=background"
                   }
                 ],
-                "description": "Open raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-2",
+                "description": "Open raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-2?launchType=background",
                 "type": "basic",
                 "from": {
                   "key_code": "2",

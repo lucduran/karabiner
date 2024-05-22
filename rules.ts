@@ -38,7 +38,7 @@ const rules: KarabinerRules[] = [
         ],
         type: "basic",
       },
-      {
+      /* {
         type: "basic",
         description: "Disable CMD + Tab to force Hyper Key usage",
         from: {
@@ -52,7 +52,7 @@ const rules: KarabinerRules[] = [
             key_code: "tab",
           },
         ],
-      },
+      }, */
     ],
   },
   ...createHyperSubLayers({
@@ -105,7 +105,7 @@ const rules: KarabinerRules[] = [
       n: open(`raycast://extensions/mattisssa/spotify-player/previous?launchType=background`),
       l: open(`raycast://extensions/mattisssa/spotify-player/like?launchType=background`),
       d: open(`raycast://extensions/mattisssa/spotify-player/dislike?launchType=background`),
-      s: open(`raycast://extensions/mattisssa/spotify-player/toggleShuffle?launchType=background`),
+      s: open(`raycast://extensions/mattisssa/spotify-player/nowPlaying`),
       r: open(`raycast://extensions/mattisssa/spotify-player/startRadio?launchType=background`),
       a: open(`raycast://extensions/mattisssa/spotify-player/cycleRepeat?launchType=background`),
       u: open(`raycast://extensions/mattisssa/spotify-player/copyUrl?launchType=background`),
@@ -486,10 +486,10 @@ const rules: KarabinerRules[] = [
 
       // Caffeinate toggle
       // a = "A"wake
-      a: open("raycast://extensions/mooxl/coffee/caffeinateToggle"),
+      a: open("raycast://extensions/mooxl/coffee/caffeinateToggle?launchType=background"),
 
       // Quit all applications
-      q: open("raycast://extensions/raycast/system/quit-all-applications"),
+      q: open("raycast://extensions/raycast/system/quit-all-applications?launchType=background"),
 
       // "N"otifications-Do not disturb toggle
       d: open(`raycast://extensions/yakitrak/do-not-disturb/toggle?launchType=background`),
@@ -545,10 +545,10 @@ const rules: KarabinerRules[] = [
         "raycast://extensions/raycast/clipboard-history/clipboard-history"
       ),
       1: open(
-        "raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-1"
+        "raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-1?launchType=background"
       ),
       2: open(
-        "raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-2"
+        "raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-2?launchType=background"
       ),
     },
 
