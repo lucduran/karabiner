@@ -2208,33 +2208,6 @@
                 ]
               },
               {
-                "description": "Quit Current App",
-                "to": [
-                  {
-                    "key_code": "q",
-                    "modifiers": [
-                      "right_command"
-                    ]
-                  }
-                ],
-                "type": "basic",
-                "from": {
-                  "key_code": "q",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_w",
-                    "value": 1
-                  }
-                ]
-              },
-              {
                 "description": "Browser: New Tab",
                 "to": [
                   {

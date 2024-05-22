@@ -348,15 +348,6 @@ const rules: KarabinerRules[] = [
       },
 
       // System navigation
-      q: {
-        description: "Quit Current App",
-        to: [
-          {
-            key_code: "q",
-            modifiers: ["right_command"],
-          },
-        ],
-      },
       3: {
         description: "Window: Previous Tab",
         to: [
