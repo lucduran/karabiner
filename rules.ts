@@ -119,6 +119,7 @@ const rules: KarabinerRules[] = [
       c: app("Calendar"),
       // "A"I
       a: app("ChatGPT"),
+      r: app("Reminders"),
     },
 
     // b = "B"rowse
