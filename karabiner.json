@@ -978,30 +978,6 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a 'Snapchat.app'"
-                  }
-                ],
-                "description": "Open -a 'Snapchat.app'",
-                "type": "basic",
-                "from": {
-                  "key_code": "h",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_o",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
                     "shell_command": "open -a 'Calendar.app'"
                   }
                 ],
@@ -1146,6 +1122,102 @@
               {
                 "to": [
                   {
+                    "shell_command": "open -a 'Slack.app'"
+                  }
+                ],
+                "description": "Open -a 'Slack.app'",
+                "type": "basic",
+                "from": {
+                  "key_code": "s",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_o",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open -a 'Google Chrome.app'"
+                  }
+                ],
+                "description": "Open -a 'Google Chrome.app'",
+                "type": "basic",
+                "from": {
+                  "key_code": "g",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_o",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open -a 'Airtable.app'"
+                  }
+                ],
+                "description": "Open -a 'Airtable.app'",
+                "type": "basic",
+                "from": {
+                  "key_code": "k",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_o",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open -a 'Figma.app'"
+                  }
+                ],
+                "description": "Open -a 'Figma.app'",
+                "type": "basic",
+                "from": {
+                  "key_code": "e",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_o",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
                     "shell_command": "open -a 'Spotify.app'"
                   }
                 ],
@@ -1225,78 +1297,6 @@
                 "type": "basic",
                 "from": {
                   "key_code": "semicolon",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_o",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "shell_command": "open -a 'Slack.app'"
-                  }
-                ],
-                "description": "Open -a 'Slack.app'",
-                "type": "basic",
-                "from": {
-                  "key_code": "s",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_o",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "shell_command": "open -a 'Google Chrome.app'"
-                  }
-                ],
-                "description": "Open -a 'Google Chrome.app'",
-                "type": "basic",
-                "from": {
-                  "key_code": "g",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_o",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "shell_command": "open -a 'Airtable.app'"
-                  }
-                ],
-                "description": "Open -a 'Airtable.app'",
-                "type": "basic",
-                "from": {
-                  "key_code": "k",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -1739,29 +1739,6 @@
                     "value": 1
                   }
                 ]
-              },
-              {
-                "to": [
-                  {
-                    "shell_command": "open -a \"Google Chrome\" \"https://www.figma.com/board/9GuvEeOWjf71XS4jRBeFi1/renter-application-flow?node-id=3-82&t=YPZJ5hcjYQVxLqj4-0\", \"https://www.figma.com/design/JHAHj3Q6kmhjsVxoQwK0JS/Rz-USWDS?node-id=0-1&t=g1qpMw2jIyMMFMoq-0\""
-                  }
-                ],
-                "type": "basic",
-                "from": {
-                  "key_code": "f",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_b",
-                    "value": 1
-                  }
-                ]
               }
             ]
           },
@@ -1917,62 +1894,6 @@
                 "description": "Amethyst: Move Focus Counter Clockwise",
                 "to": [
                   {
-                    "key_code": "k",
-                    "modifiers": [
-                      "option",
-                      "shift"
-                    ]
-                  }
-                ],
-                "type": "basic",
-                "from": {
-                  "key_code": "k",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_w",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "description": "Amethyst: Move Focus Clockwise",
-                "to": [
-                  {
-                    "key_code": "l",
-                    "modifiers": [
-                      "option",
-                      "shift"
-                    ]
-                  }
-                ],
-                "type": "basic",
-                "from": {
-                  "key_code": "l",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_w",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "description": "Amethyst: Swap Focus To Counter Clockwise Screen",
-                "to": [
-                  {
                     "key_code": "j",
                     "modifiers": [
                       "option",
@@ -1998,7 +1919,7 @@
                 ]
               },
               {
-                "description": "Amethyst: Swap Focus To Clockwise Screen",
+                "description": "Amethyst: Move Focus Clockwise",
                 "to": [
                   {
                     "key_code": "semicolon",
@@ -2011,6 +1932,62 @@
                 "type": "basic",
                 "from": {
                   "key_code": "semicolon",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_w",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "Amethyst: Move Focus To Counter Clockwise Screen",
+                "to": [
+                  {
+                    "key_code": "k",
+                    "modifiers": [
+                      "option",
+                      "shift"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "k",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_w",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "Amethyst: Move Focus To Clockwise Screen",
+                "to": [
+                  {
+                    "key_code": "l",
+                    "modifiers": [
+                      "option",
+                      "shift"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "l",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -2396,6 +2373,7 @@
                     "key_code": "z",
                     "modifiers": [
                       "option",
+                      "control",
                       "shift"
                     ]
                   }
@@ -2403,6 +2381,33 @@
                 "type": "basic",
                 "from": {
                   "key_code": "z",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_w",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "Command + Tab",
+                "to": [
+                  {
+                    "key_code": "tab",
+                    "modifiers": [
+                      "command"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "d",
                   "modifiers": {
                     "optional": [
                       "any"

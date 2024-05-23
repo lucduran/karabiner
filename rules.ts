@@ -38,21 +38,6 @@ const rules: KarabinerRules[] = [
         ],
         type: "basic",
       },
-      /* {
-        type: "basic",
-        description: "Disable CMD + Tab to force Hyper Key usage",
-        from: {
-          key_code: "tab",
-          modifiers: {
-            mandatory: ["left_command"],
-          },
-        },
-        to: [
-          {
-            key_code: "tab",
-          },
-        ],
-      }, */
     ],
   },
   ...createHyperSubLayers({
@@ -124,7 +109,6 @@ const rules: KarabinerRules[] = [
       b: app("Brave Browser"),
       f: app("Finder"),
       m: app("Messages"),
-      h: app("Snapchat"),
 
       // Productivity
       c: app("Calendar"),
@@ -134,16 +118,17 @@ const rules: KarabinerRules[] = [
       v: app("Visual Studio Code"),
       t: app("iTerm"),
 
+      // Work
+      s: app("Slack"),
+      g: app("Google Chrome"),
+      k: app("Airtable"),
+      e: app("Figma"),
+
       // Entertainment
       p: app("Spotify"),
       d: app("Discord"),
       l: app("Prism Launcher"),
       semicolon: app("Fabulously Optimized 5.12.0-alpha.4"),
-
-      // Work
-      s: app("Slack"),
-      g: app("Google Chrome"),
-      k: app("Airtable"),
     },
 
     // b = "B"rowse
@@ -178,39 +163,12 @@ const rules: KarabinerRules[] = [
           }
         ]
       },
-
-      // "F"igma
-      f: {
-        to: [
-          {
-            shell_command: `open -a "Google Chrome" "https://www.figma.com/board/9GuvEeOWjf71XS4jRBeFi1/renter-application-flow?node-id=3-82&t=YPZJ5hcjYQVxLqj4-0", "https://www.figma.com/design/JHAHj3Q6kmhjsVxoQwK0JS/Rz-USWDS?node-id=0-1&t=g1qpMw2jIyMMFMoq-0"`
-          }
-        ]
-      },
     },
     // w = "Window" via Amethyst.app
     w: {
       // Focus manipulation
-      k: {
-        description: "Amethyst: Move Focus Counter Clockwise",
-        to: [
-          {
-            key_code: "k",
-            modifiers: ["option", "shift"],
-          },
-        ],
-      },
-      l: {
-        description: "Amethyst: Move Focus Clockwise",
-        to: [
-          {
-            key_code: "l",
-            modifiers: ["option", "shift"],
-          },
-        ],
-      },
       j: {
-        description: "Amethyst: Swap Focus To Counter Clockwise Screen",
+        description: "Amethyst: Move Focus Counter Clockwise",
         to: [
           {
             key_code: "j",
@@ -219,10 +177,28 @@ const rules: KarabinerRules[] = [
         ],
       },
       semicolon: {
-        description: "Amethyst: Swap Focus To Clockwise Screen",
+        description: "Amethyst: Move Focus Clockwise",
         to: [
           {
             key_code: "semicolon",
+            modifiers: ["option", "shift"],
+          },
+        ],
+      },
+      k: {
+        description: "Amethyst: Move Focus To Counter Clockwise Screen",
+        to: [
+          {
+            key_code: "k",
+            modifiers: ["option", "shift"],
+          },
+        ],
+      },
+      l: {
+        description: "Amethyst: Move Focus To Clockwise Screen",
+        to: [
+          {
+            key_code: "l",
             modifiers: ["option", "shift"],
           },
         ],
@@ -353,17 +329,25 @@ const rules: KarabinerRules[] = [
         ],
       },
 
+      // System navigation
       z: {
         description: "Amethyst: Restart Amethyst",
         to: [
           {
             key_code: "z",
-            modifiers: ["option", "shift"],
+            modifiers: ["option", "control", "shift"],
           },
         ],
       },
-
-      // System navigation
+      d: {
+        description: "Command + Tab",
+        to: [
+          {
+            key_code: "tab",
+            modifiers: ["command"],
+          },
+        ],
+      },
       3: {
         description: "Window: Previous Tab",
         to: [
