@@ -58,10 +58,18 @@ const rules: KarabinerRules[] = [
   ...createHyperSubLayers({
 
     // Quick window hide
-    a: {
+    f: {
       to: [
         {
           key_code: "h",
+          modifiers: ["command"],
+        },
+      ],
+    },
+    d: {
+      to: [
+        {
+          key_code: "w",
           modifiers: ["command"],
         },
       ],
@@ -141,8 +149,8 @@ const rules: KarabinerRules[] = [
     // b = "B"rowse
     b: {
       y: open("https://www.youtube.com"),
-      h: open("https://www.hckrnws.com/top/1"),
-      c: open("https://chat.openai.com"),
+      h: open("https://news.ycombinator.com/news"),
+      c: open("https://classpass.com/search"),
       t: open("https://www.typingclub.com/sportal/program-3.game"),
       s: open("https://client.schwab.com/clientapps/accounts/summary/"),
       n: open("https://app.ynab.com/fe910454-0ccd-4e4d-95f5-fc6f1545d0bf/budget"),
