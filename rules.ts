@@ -76,6 +76,15 @@ const rules: KarabinerRules[] = [
         },
       ],
     },
+    t: {
+      description: "New Tab`",
+      to: [
+        {
+          key_code: "t",
+          modifiers: ["command"],
+        },
+      ],
+    },
 
     // Remap delete to quote + hyper
     quote: {
