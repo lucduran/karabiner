@@ -42,7 +42,7 @@ const rules: KarabinerRules[] = [
   },
   ...createHyperSubLayers({
 
-    // Quick window hide
+    // Quick make window go away
     f: {
       to: [
         {
@@ -55,6 +55,23 @@ const rules: KarabinerRules[] = [
       to: [
         {
           key_code: "w",
+          modifiers: ["command"],
+        },
+      ],
+    },
+    q: {
+      to: [
+        {
+          key_code: "q",
+          modifiers: ["command"],
+        },
+      ],
+    },
+    a: {
+      description: "Command + Tab",
+      to: [
+        {
+          key_code: "tab",
           modifiers: ["command"],
         },
       ],
@@ -339,16 +356,7 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      d: {
-        description: "Command + Tab",
-        to: [
-          {
-            key_code: "tab",
-            modifiers: ["command"],
-          },
-        ],
-      },
-      3: {
+      e: {
         description: "Window: Previous Tab",
         to: [
           {
@@ -357,7 +365,7 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      4: {
+      r: {
         description: "Window: Next Tab",
         to: [
           {
@@ -375,7 +383,7 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      e: {
+      3: {
         description: "Browser: Go Back",
         to: [
           {
@@ -384,7 +392,7 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      r: {
+      4: {
         description: "Browser: Go Forward",
         to: [
           {
