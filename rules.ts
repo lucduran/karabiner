@@ -43,7 +43,7 @@ const rules: KarabinerRules[] = [
   ...createHyperSubLayers({
 
     // Quick make window go away
-    f: {
+    d: {
       to: [
         {
           key_code: "h",
@@ -51,7 +51,7 @@ const rules: KarabinerRules[] = [
         },
       ],
     },
-    d: {
+    a: {
       to: [
         {
           key_code: "w",
@@ -67,7 +67,7 @@ const rules: KarabinerRules[] = [
         },
       ],
     },
-    a: {
+    f: {
       description: "Command + Tab",
       to: [
         {
