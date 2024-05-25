@@ -169,6 +169,20 @@ export function open(what: string): LayerCommand {
 }
 
 /**
+ * Shortcut for managing windows with yabai and skhd
+ */
+export function yabai(name: string): LayerCommand {
+  return {
+    to: [
+      {
+        shell_command: `/opt/homebrew/bin/yabai ${name}`,
+      },
+    ],
+    description: `yabai ${name}`,
+  };
+}
+
+/**
  * Shortcut for "Open an app" command (of which there are a bunch)
  */
 export function app(name: string): LayerCommand {

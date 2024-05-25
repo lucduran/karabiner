@@ -1,6 +1,6 @@
 import * as fs from "fs";
 import { KarabinerRules } from "./types";
-import { app, createHyperSubLayers, open } from "./utils";
+import { createHyperSubLayers, app, open, yabai } from "./utils";
 
 const rules: KarabinerRules[] = [
   // Define the Hyper key itself
@@ -20,7 +20,7 @@ const rules: KarabinerRules[] = [
             set_variable: {
               name: "hyper",
               value: 1
-            }
+            },
           },
         ],
         to_after_key_up: [
@@ -42,51 +42,7 @@ const rules: KarabinerRules[] = [
   },
   ...createHyperSubLayers({
 
-    // Quick make window go away
-    d: {
-      to: [
-        {
-          key_code: "h",
-          modifiers: ["command"],
-        },
-      ],
-    },
-    a: {
-      to: [
-        {
-          key_code: "w",
-          modifiers: ["command"],
-        },
-      ],
-    },
-    q: {
-      to: [
-        {
-          key_code: "q",
-          modifiers: ["command"],
-        },
-      ],
-    },
-    f: {
-      description: "Command + Tab",
-      to: [
-        {
-          key_code: "tab",
-          modifiers: ["command"],
-        },
-      ],
-    },
-    t: {
-      description: "New Tab`",
-      to: [
-        {
-          key_code: "t",
-          modifiers: ["command"],
-        },
-      ],
-    },
-
-    // Remap delete to quote + hyper
+    // Remap delete to hyper + quote
     quote: {
       to: [
         {
@@ -97,37 +53,70 @@ const rules: KarabinerRules[] = [
 
     spacebar: open("raycast://extensions/raycast/apple-reminders/create-reminder"),
 
-    // h = "H"ome
-    h: {
-      // This will be for controlling my house
-      // Turn on Elgato KeyLight
-      /* y: {
+    // w = "Window" via yabai
+    w: {
+      // Focus manipulation
+      j: yabai("-m window --focus west"),
+      semicolon: yabai("-m window --focus east"),
+      k: yabai("-m window --focus south"),
+      l: yabai("-m window --focus north"),
+      quote: {
         to: [
           {
-            shell_command: `curl -H 'Content-Type: application/json' --request PUT --data '{ "numberOfLights": 1, "lights": [ { "on": 1, "brightness": 100, "temperature": 215 } ] }' http://192.168.8.84:9123/elgato/lights`,
+            key_code: "right_arrow",
+            modifiers: ["control"],
           },
         ],
       },
       h: {
         to: [
           {
-            shell_command: `curl -H 'Content-Type: application/json' --request PUT --data '{ "numberOfLights": 1, "lights": [ { "on": 0, "brightness": 100, "temperature": 215 } ] }' http://192.168.8.84:9123/elgato/lights`,
+            key_code: "left_arrow",
+            modifiers: ["control"],
           },
         ],
-      }, */
-    },
+      },
 
-    // c = musi"C"
-    c: {
-      p: open(`raycast://extensions/mattisssa/spotify-player/togglePlayPause?launchType=background`),
-      m: open(`raycast://extensions/mattisssa/spotify-player/next?launchType=background`),
-      n: open(`raycast://extensions/mattisssa/spotify-player/previous?launchType=background`),
-      l: open(`raycast://extensions/mattisssa/spotify-player/like?launchType=background`),
-      d: open(`raycast://extensions/mattisssa/spotify-player/dislike?launchType=background`),
-      s: open(`raycast://extensions/mattisssa/spotify-player/nowPlaying`),
-      r: open(`raycast://extensions/mattisssa/spotify-player/startRadio?launchType=background`),
-      a: open(`raycast://extensions/mattisssa/spotify-player/cycleRepeat?launchType=background`),
-      u: open(`raycast://extensions/mattisssa/spotify-player/copyUrl?launchType=background`),
+      // Window swapping
+      u: yabai("-m window --swap west"),
+      p: yabai("-m window --swap east"),
+      i: yabai("-m window --swap south"),
+      o: yabai("-m window --swap north"),
+      // Swap windows to spaces
+      y: yabai("-m window --space prev"),
+      open_bracket: yabai("-m window --space next"),
+
+      // Window warping
+      7: yabai("-m window --warp west"),
+      0: yabai("-m window --warp east"),
+      8: yabai("-m window --warp south"),
+      9: yabai("-m window --warp north"),
+      // Layout change
+      b: yabai("-m space --balance"),
+      period: yabai("-m space --rotate 270"),
+      comma: yabai("-m space --rotate 90"),
+
+      // Window size manipulation
+
+      z: yabai("--restart-service"),
+
+      // New actions for hyper + w + command
+      c: {
+        to: [
+          {
+            key_code: "c",
+            modifiers: ["command"],
+          },
+        ],
+      },
+      v: {
+        to: [
+          {
+            key_code: "v",
+            modifiers: ["command"],
+          },
+        ],
+      },
     },
 
     // o = "Open" applications
@@ -190,227 +179,21 @@ const rules: KarabinerRules[] = [
         ]
       },
     },
-    // w = "Window" via Amethyst.app
-    w: {
-      // Focus manipulation
-      j: {
-        description: "Amethyst: Move Focus Counter Clockwise",
-        to: [
-          {
-            key_code: "j",
-            modifiers: ["option", "shift"],
-          },
-        ],
-      },
-      semicolon: {
-        description: "Amethyst: Move Focus Clockwise",
-        to: [
-          {
-            key_code: "semicolon",
-            modifiers: ["option", "shift"],
-          },
-        ],
-      },
-      k: {
-        description: "Amethyst: Move Focus To Counter Clockwise Screen",
-        to: [
-          {
-            key_code: "k",
-            modifiers: ["option", "shift"],
-          },
-        ],
-      },
-      l: {
-        description: "Amethyst: Move Focus To Clockwise Screen",
-        to: [
-          {
-            key_code: "l",
-            modifiers: ["option", "shift"],
-          },
-        ],
-      },
 
-      // Window swapping
-      i: {
-        description: "Amethyst: Swap Focused Window Counter Clockwise",
-        to: [
-          {
-            key_code: "i",
-            modifiers: ["option", "shift"],
-          },
-        ],
-      },
-      o: {
-        description: "Amethyst: Swap Focused Window Clockwise",
-        to: [
-          {
-            key_code: "o",
-            modifiers: ["option", "shift"],
-          },
-        ],
-      },
-      u: {
-        description: "Amethyst: Swap Focused Window Counter Clockwise Screen",
-        to: [
-          {
-            key_code: "u",
-            modifiers: ["option", "shift"],
-          },
-        ],
-      },
-      p: {
-        description: "Amethyst: Swap Focused Window Clockwise Screen",
-        to: [
-          {
-            key_code: "p",
-            modifiers: ["option", "shift"],
-          },
-        ],
-      },
-      return_or_enter: {
-        description: "Amethyst: Swap Focused Window with Main Window",
-        to: [
-          {
-            key_code: "return_or_enter",
-            modifiers: ["option", "shift"],
-          },
-        ],
-      },
-      g: {
-        description: "Amethyst: Toggle Float for Focused Window",
-        to: [
-          {
-            key_code: "t",
-            modifiers: ["option", "shift"],
-          },
-        ],
-      },
-
-      // Window size manipulation
-      comma: {
-        description: "Amethyst: Shrink Main Pane",
-        to: [
-          {
-            key_code: "comma",
-            modifiers: ["option", "shift"],
-          },
-        ],
-      },
-      period: {
-        description: "Amethyst: Expand Main Pane",
-        to: [
-          {
-            key_code: "period",
-            modifiers: ["option", "shift"],
-          },
-        ],
-      },
-
-      // Layout change
-      t: {
-        description: "Amethyst: Select 'Tall' Layout",
-        to: [
-          {
-            key_code: "t",
-            modifiers: ["option", "shift"],
-          },
-        ],
-      },
-      f: {
-        description: "Amethyst: Select 'Fullscreen' Layout",
-        to: [
-          {
-            key_code: "f",
-            modifiers: ["option", "shift"],
-          },
-        ],
-      },
-      c: {
-        description: "Amethyst: Select '3 Column Left' Layout",
-        to: [
-          {
-            key_code: "c",
-            modifiers: ["option", "shift"],
-          },
-        ],
-      },
-
-      // Spaces manipulation
-      m: {
-        description: "Amethyst: Throw Focused Window to Space Left",
-        to: [
-          {
-            key_code: "m",
-            modifiers: ["option", "shift"],
-          },
-        ],
-      },
-      slash: {
-        description: "Amethyst: Throw Focused Window to Space Right",
-        to: [
-          {
-            key_code: "slash",
-            modifiers: ["option", "shift"],
-          },
-        ],
-      },
-
-      // System navigation
-      z: {
-        description: "Amethyst: Restart Amethyst",
-        to: [
-          {
-            key_code: "z",
-            modifiers: ["option", "control", "shift"],
-          },
-        ],
-      },
-      e: {
-        description: "Window: Previous Tab",
-        to: [
-          {
-            key_code: "tab",
-            modifiers: ["right_control", "right_shift"],
-          },
-        ],
-      },
-      r: {
-        description: "Window: Next Tab",
-        to: [
-          {
-            key_code: "tab",
-            modifiers: ["right_control"],
-          },
-        ],
-      },
-      n: {
-        description: "Browser: New Tab",
-        to: [
-          {
-            key_code: "t",
-            modifiers: ["right_command"],
-          },
-        ],
-      },
-      3: {
-        description: "Browser: Go Back",
-        to: [
-          {
-            key_code: "open_bracket",
-            modifiers: ["right_command"],
-          },
-        ],
-      },
-      4: {
-        description: "Browser: Go Forward",
-        to: [
-          {
-            key_code: "close_bracket",
-            modifiers: ["right_command"],
-          },
-        ],
-      },
+    // c = musi"C"
+    c: {
+      p: open(`raycast://extensions/mattisssa/spotify-player/togglePlayPause?launchType=background`),
+      m: open(`raycast://extensions/mattisssa/spotify-player/next?launchType=background`),
+      n: open(`raycast://extensions/mattisssa/spotify-player/previous?launchType=background`),
+      l: open(`raycast://extensions/mattisssa/spotify-player/like?launchType=background`),
+      d: open(`raycast://extensions/mattisssa/spotify-player/dislike?launchType=background`),
+      s: open(`raycast://extensions/mattisssa/spotify-player/nowPlaying`),
+      r: open(`raycast://extensions/mattisssa/spotify-player/startRadio?launchType=background`),
+      a: open(`raycast://extensions/mattisssa/spotify-player/cycleRepeat?launchType=background`),
+      u: open(`raycast://extensions/mattisssa/spotify-player/copyUrl?launchType=background`),
     },
+
+
 
     // s = "System"
     s: {
@@ -533,7 +316,56 @@ const rules: KarabinerRules[] = [
       o: {
         to: [{ key_code: "page_up" }],
       },
+
+      // System navigation
+      e: {
+        description: "Window: Previous Tab",
+        to: [
+          {
+            key_code: "tab",
+            modifiers: ["right_control", "right_shift"],
+          },
+        ],
+      },
+      r: {
+        description: "Window: Next Tab",
+        to: [
+          {
+            key_code: "tab",
+            modifiers: ["right_control"],
+          },
+        ],
+      },
+      9: {
+        description: "Browser: New Tab",
+        to: [
+          {
+            key_code: "t",
+            modifiers: ["right_command"],
+          },
+        ],
+      },
+      3: {
+        description: "Browser: Go Back",
+        to: [
+          {
+            key_code: "open_bracket",
+            modifiers: ["right_command"],
+          },
+        ],
+      },
+      4: {
+        description: "Browser: Go Forward",
+        to: [
+          {
+            key_code: "close_bracket",
+            modifiers: ["right_command"],
+          },
+        ],
+      },
     },
+
+
 
     // r = "Raycast"
     r: {
@@ -556,6 +388,9 @@ const rules: KarabinerRules[] = [
         "raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-2?launchType=background"
       ),
     },
+
+    // h = "H"ome
+    h: {},
 
   }),
 ];
