@@ -118,6 +118,14 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
+      d: {
+        to: [
+          {
+            key_code: "w",
+            modifiers: ["command"],
+          },
+        ],
+      },
       q: {
         to: [
           {
