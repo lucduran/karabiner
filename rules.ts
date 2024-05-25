@@ -53,8 +53,36 @@ const rules: KarabinerRules[] = [
 
     spacebar: open("raycast://extensions/raycast/apple-reminders/create-reminder"),
 
+    // Closing windows
+    // Outside of window later to be used as a standalone shortcut for quick switching
+    f: {
+      to: [
+        {
+          key_code: "tab",
+          modifiers: ["command"],
+        },
+      ],
+    },
+
     // w = "Window" via yabai
     w: {
+      d: {
+        to: [
+          {
+            key_code: "h",
+            modifiers: ["command"],
+          },
+        ],
+      },
+      q: {
+        to: [
+          {
+            key_code: "q",
+            modifiers: ["command"],
+          },
+        ],
+      },
+
       // Focus manipulation
       j: yabai("-m window --focus west"),
       semicolon: yabai("-m window --focus east"),
@@ -96,27 +124,7 @@ const rules: KarabinerRules[] = [
       period: yabai("-m space --rotate 270"),
       comma: yabai("-m space --rotate 90"),
 
-      // Window size manipulation
-
       z: yabai("--restart-service"),
-
-      // New actions for hyper + w + command
-      c: {
-        to: [
-          {
-            key_code: "c",
-            modifiers: ["command"],
-          },
-        ],
-      },
-      v: {
-        to: [
-          {
-            key_code: "v",
-            modifiers: ["command"],
-          },
-        ],
-      },
     },
 
     // o = "Open" applications
