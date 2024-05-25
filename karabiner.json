@@ -86,7 +86,7 @@
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_d",
+                    "name": "hyper_sublayer_a",
                     "value": 0
                   },
                   {
@@ -170,7 +170,7 @@
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_d",
+                    "name": "hyper_sublayer_a",
                     "value": 0
                   },
                   {
@@ -256,7 +256,7 @@
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_d",
+                    "name": "hyper_sublayer_a",
                     "value": 0
                   },
                   {
@@ -299,7 +299,7 @@
             ]
           },
           {
-            "description": "Hyper Key + d",
+            "description": "Hyper Key + a",
             "manipulators": [
               {
                 "to": [
@@ -312,7 +312,7 @@
                 ],
                 "type": "basic",
                 "from": {
-                  "key_code": "d",
+                  "key_code": "a",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -342,7 +342,7 @@
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_d",
+                    "name": "hyper_sublayer_a",
                     "value": 0
                   },
                   {
@@ -432,7 +432,7 @@
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_d",
+                    "name": "hyper_sublayer_a",
                     "value": 0
                   },
                   {
@@ -649,6 +649,32 @@
               {
                 "to": [
                   {
+                    "key_code": "n",
+                    "modifiers": [
+                      "command"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "f",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_w",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
                     "key_code": "w",
                     "modifiers": [
                       "command"
@@ -684,30 +710,6 @@
                 "type": "basic",
                 "from": {
                   "key_code": "q",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_w",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "shell_command": "/opt/homebrew/bin/yabai --restart-service"
-                  }
-                ],
-                "description": "yabai --restart-service",
-                "type": "basic",
-                "from": {
-                  "key_code": "z",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -788,32 +790,6 @@
                 "type": "basic",
                 "from": {
                   "key_code": "r",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_w",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "key_code": "n",
-                    "modifiers": [
-                      "command"
-                    ]
-                  }
-                ],
-                "type": "basic",
-                "from": {
-                  "key_code": "f",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -927,6 +903,54 @@
               {
                 "to": [
                   {
+                    "shell_command": "/opt/homebrew/bin/yabai -m display --focus prev"
+                  }
+                ],
+                "description": "yabai -m display --focus prev",
+                "type": "basic",
+                "from": {
+                  "key_code": "h",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_w",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "/opt/homebrew/bin/yabai -m display --focus next"
+                  }
+                ],
+                "description": "yabai -m display --focus next",
+                "type": "basic",
+                "from": {
+                  "key_code": "quote",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_w",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
                     "key_code": "right_arrow",
                     "modifiers": [
                       "control"
@@ -935,7 +959,7 @@
                 ],
                 "type": "basic",
                 "from": {
-                  "key_code": "quote",
+                  "key_code": "slash",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -961,7 +985,55 @@
                 ],
                 "type": "basic",
                 "from": {
-                  "key_code": "h",
+                  "key_code": "m",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_w",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "/opt/homebrew/bin/yabai -m window --resize right:-40:0 2> /dev/null || yabai -m window --resize left:-40:0 2> /dev/null"
+                  }
+                ],
+                "description": "yabai -m window --resize right:-40:0 2> /dev/null || yabai -m window --resize left:-40:0 2> /dev/null",
+                "type": "basic",
+                "from": {
+                  "key_code": "comma",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_w",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "/opt/homebrew/bin/yabai -m window --resize right:40:0 2> /dev/null || yabai -m window --resize left:40:0 2> /dev/null"
+                  }
+                ],
+                "description": "yabai -m window --resize right:40:0 2> /dev/null || yabai -m window --resize left:40:0 2> /dev/null",
+                "type": "basic",
+                "from": {
+                  "key_code": "period",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -1075,10 +1147,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "/opt/homebrew/bin/yabai -m window --space prev"
+                    "shell_command": "/opt/homebrew/bin/yabai -m window --display prev && /opt/homebrew/bin/yabai -m display --focus prev"
                   }
                 ],
-                "description": "yabai -m window --space prev",
+                "description": "yabai -m window --display prev && /opt/homebrew/bin/yabai -m display --focus prev",
                 "type": "basic",
                 "from": {
                   "key_code": "y",
@@ -1099,10 +1171,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "/opt/homebrew/bin/yabai -m window --space next"
+                    "shell_command": "/opt/homebrew/bin/yabai -m window --display next && /opt/homebrew/bin/yabai -m display --focus next"
                   }
                 ],
-                "description": "yabai -m window --space next",
+                "description": "yabai -m window --display next && /opt/homebrew/bin/yabai -m display --focus next",
                 "type": "basic",
                 "from": {
                   "key_code": "open_bracket",
@@ -1147,37 +1219,13 @@
               {
                 "to": [
                   {
-                    "shell_command": "/opt/homebrew/bin/yabai -m space --rotate 270"
+                    "shell_command": "/opt/homebrew/bin/yabai --restart-service"
                   }
                 ],
-                "description": "yabai -m space --rotate 270",
+                "description": "yabai --restart-service",
                 "type": "basic",
                 "from": {
-                  "key_code": "period",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_w",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "shell_command": "/opt/homebrew/bin/yabai -m space --rotate 90"
-                  }
-                ],
-                "description": "yabai -m space --rotate 90",
-                "type": "basic",
-                "from": {
-                  "key_code": "comma",
+                  "key_code": "z",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -1242,7 +1290,7 @@
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_d",
+                    "name": "hyper_sublayer_a",
                     "value": 0
                   },
                   {
@@ -1740,7 +1788,7 @@
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_d",
+                    "name": "hyper_sublayer_a",
                     "value": 0
                   },
                   {
@@ -2164,7 +2212,7 @@
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_d",
+                    "name": "hyper_sublayer_a",
                     "value": 0
                   },
                   {
@@ -2470,7 +2518,7 @@
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_d",
+                    "name": "hyper_sublayer_a",
                     "value": 0
                   },
                   {
@@ -2994,7 +3042,7 @@
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_d",
+                    "name": "hyper_sublayer_a",
                     "value": 0
                   },
                   {
@@ -3300,7 +3348,7 @@
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_d",
+                    "name": "hyper_sublayer_a",
                     "value": 0
                   },
                   {

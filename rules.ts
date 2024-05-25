@@ -43,46 +43,54 @@ const rules: KarabinerRules[] = [
   ...createHyperSubLayers({
 
     // Remap delete to hyper + quote
-    quote: { to: [ { key_code: "delete_or_backspace", }, ], },
+    quote: { to: [{ key_code: "delete_or_backspace", },], },
 
     spacebar: open("raycast://extensions/raycast/apple-reminders/create-reminder"),
 
     // Quick switch active window
     f: { to: [{ key_code: "tab", modifiers: ["command"], },], },
     // Quick hide active window
-    d: { to: [ { key_code: "h", modifiers: ["command"], }, ], },
-
+    a: { to: [{ key_code: "h", modifiers: ["command"], },], },
     // w = "Window" via yabai
     w: {
-      // Make window go away
-      d: { to: [ { key_code: "w", modifiers: ["command"], }, ], },
-      q: { to: [ { key_code: "q", modifiers: ["command"], }, ], },
-      z: yabai("--restart-service"),
-      // Tab nagivation
-      t: { to: [ { key_code: "t", modifiers: ["command"], }, ], },
-      e: { to: [ { key_code: "open_bracket", modifiers: ["command", "shift"], }, ], },
-      r: { to: [ { key_code: "close_bracket", modifiers: ["command", "shift"], }, ], },
-      // Webpage nagivation
-      3: { to: [ { key_code: "open_bracket", modifiers: ["command"], }, ], },
-      4: { to: [ { key_code: "close_bracket", modifiers: ["command"], }, ], },
-      5: { to: [ { key_code: "l", modifiers: ["command"], }, ], },
       // Create new window/tab
-      f: { to: [ { key_code: "n", modifiers: ["command"], }, ], },
-      // Focus manipulation
+      f: { to: [{ key_code: "n", modifiers: ["command"], },], },
+      // Make window go away
+      d: { to: [{ key_code: "w", modifiers: ["command"], },], },
+      q: { to: [{ key_code: "q", modifiers: ["command"], },], },
+      // Quick hide active window
+      // Tab nagivation
+      t: { to: [{ key_code: "t", modifiers: ["command"], },], },
+      e: { to: [{ key_code: "open_bracket", modifiers: ["command", "shift"], },], },
+      r: { to: [{ key_code: "close_bracket", modifiers: ["command", "shift"], },], },
+      // Webpage nagivation
+      3: { to: [{ key_code: "open_bracket", modifiers: ["command"], },], },
+      4: { to: [{ key_code: "close_bracket", modifiers: ["command"], },], },
+      5: { to: [{ key_code: "l", modifiers: ["command"], },], },
+      // Window focus
       j: yabai("-m window --focus west"),
       semicolon: yabai("-m window --focus east"),
       k: yabai("-m window --focus south"),
       l: yabai("-m window --focus north"),
-      quote: { to: [ { key_code: "right_arrow", modifiers: ["control"], }, ], },
-      h: { to: [ { key_code: "left_arrow", modifiers: ["control"], }, ], },
+      h: yabai("-m display --focus prev"),
+      quote: yabai("-m display --focus next"),
+      slash: { to: [{ key_code: "right_arrow", modifiers: ["control"], },], },
+      m: { to: [{ key_code: "left_arrow", modifiers: ["control"], },], },
+      // Window resizing
+      // shift + alt - h : yabai -m window --resize right:-20:0 2> /dev/null || yabai -m window --resize left:-20:0 2> /dev/null
+      // shift + alt - j : yabai -m window --resize bottom:0:20 2> /dev/null || yabai -m window --resize top:0:20 2> /dev/null
+      // shift + alt - k : yabai -m window --resize bottom:0:-20 2> /dev/null || yabai -m window --resize top:0:-20 2> /dev/null
+      // shift + alt - l : yabai -m window --resize right:20:0 2> /dev/null || yabai -m window --resize left:20:0 2> /dev/null
+      comma: yabai("-m window --resize right:-40:0 2> /dev/null || yabai -m window --resize left:-40:0 2> /dev/null"),
+      period: yabai("-m window --resize right:40:0 2> /dev/null || yabai -m window --resize left:40:0 2> /dev/null"),
       // Window swapping
       u: yabai("-m window --swap west"),
       p: yabai("-m window --swap east"),
       i: yabai("-m window --swap south"),
       o: yabai("-m window --swap north"),
       // Swap windows to spaces
-      y: yabai("-m window --space prev"),
-      open_bracket: yabai("-m window --space next"),
+      y: yabai("-m window --display prev && /opt/homebrew/bin/yabai -m display --focus prev"),
+      open_bracket: yabai("-m window --display next && /opt/homebrew/bin/yabai -m display --focus next"),
       // Window warping
       7: yabai("-m window --warp west"),
       0: yabai("-m window --warp east"),
@@ -90,8 +98,10 @@ const rules: KarabinerRules[] = [
       9: yabai("-m window --warp north"),
       // Layout change
       b: yabai("-m space --balance"),
-      period: yabai("-m space --rotate 270"),
-      comma: yabai("-m space --rotate 90"),
+      // period: yabai("-m space --rotate 270"),
+      // comma: yabai("-m space --rotate 90"),
+      // Restart yabai
+      z: yabai("--restart-service"),
     },
 
     // o = "Open" applications
@@ -133,9 +143,9 @@ const rules: KarabinerRules[] = [
       l: open("https://www.linkedin.com/"),
       g: open("https://github.com/lucduran/"),
       // "W"eWeb
-      w: { to: [ { shell_command: `open -a "Google Chrome" "https://editor.weweb.io/47aa0874-ee85-4f94-bdd0-4d864392c9a1"` } ] },
+      w: { to: [{ shell_command: `open -a "Google Chrome" "https://editor.weweb.io/47aa0874-ee85-4f94-bdd0-4d864392c9a1"` }] },
       // "X"ano
-      x: { to: [ { shell_command: `open -a "Google Chrome" "https://xdw0-sipj-awhp.n7.xano.io/workspace/3-0/dashboard"` } ] },
+      x: { to: [{ shell_command: `open -a "Google Chrome" "https://xdw0-sipj-awhp.n7.xano.io/workspace/3-0/dashboard"` }] },
     },
 
     // c = musi"C"
@@ -154,21 +164,21 @@ const rules: KarabinerRules[] = [
     // s = "System"
     s: {
       // Show hidden menu bar icons via Bartender.app
-      b: { to: [ { key_code: "b", modifiers: ["option", "shift"], }, ], },
+      b: { to: [{ key_code: "b", modifiers: ["option", "shift"], },], },
       // Volume control
-      u: { to: [ { key_code: "volume_increment", }, ], },
-      j: { to: [ { key_code: "volume_decrement", }, ], },
+      u: { to: [{ key_code: "volume_increment", },], },
+      j: { to: [{ key_code: "volume_decrement", },], },
       // Brightness control
-      i: { to: [ { key_code: "display_brightness_increment", }, ], },
-      k: { to: [ { key_code: "display_brightness_decrement", }, ], },
+      i: { to: [{ key_code: "display_brightness_increment", },], },
+      k: { to: [{ key_code: "display_brightness_decrement", },], },
       // Lock screen
-      l: { to: [ { key_code: "q", modifiers: ["right_control", "right_command"], }, ], },
+      l: { to: [{ key_code: "q", modifiers: ["right_control", "right_command"], },], },
       // Media controls
       p: { to: [{ key_code: "play_or_pause" }], },
       m: { to: [{ key_code: "fastforward" }], },
       n: { to: [{ key_code: "rewind" }], },
       // Emoji picker
-      e: { to: [ { key_code: "spacebar", modifiers: ["right_control", "right_command"], }, ], },
+      e: { to: [{ key_code: "spacebar", modifiers: ["right_control", "right_command"], },], },
       // Mullvad VPN controls
       c: open("raycast://extensions/0x46616c6b/mullvad/connect?launchType=background"),
       v: open("raycast://extensions/0x46616c6b/mullvad/disconnect?launchType=background"),
@@ -178,10 +188,10 @@ const rules: KarabinerRules[] = [
       // q = "Q"uestion
       // q: open("raycast://extensions/third774/perplexity/ask-perplexity"),
       // Clipboard history
-      h: open( "raycast://extensions/raycast/clipboard-history/clipboard-history" ),
+      h: open("raycast://extensions/raycast/clipboard-history/clipboard-history"),
       // Connect Airpods and Beats Studio headphones
-      1: open( "raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-1?launchType=background" ),
-      2: open( "raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-2?launchType=background" ),
+      1: open("raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-1?launchType=background"),
+      2: open("raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-2?launchType=background"),
       // Airpods Pro controls
       // TODO: Fix extention toggle between wrong modes
       // t: open("raycast://extensions/chrahe/airpods-noise-control/index"),
@@ -213,7 +223,7 @@ const rules: KarabinerRules[] = [
   }),
 ];
 
-fs.writeFileSync( "karabiner.json", JSON.stringify( { global: { show_in_menu_bar: false, }, profiles: [ { name: "Default", complex_modifications: { rules, }, }, ], }, null, 2 ) );
+fs.writeFileSync("karabiner.json", JSON.stringify({ global: { show_in_menu_bar: false, }, profiles: [{ name: "Default", complex_modifications: { rules, }, },], }, null, 2));
 
 /* Hide Dock
 defaults write com.apple.dock autohide -bool true && killall Dock

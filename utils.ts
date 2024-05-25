@@ -113,40 +113,40 @@ export function createHyperSubLayers(subLayers: {
   return Object.entries(subLayers).map(([key, value]) =>
     "to" in value
       ? {
-          description: `Hyper Key + ${key}`,
-          manipulators: [
-            {
-              ...value,
-              type: "basic" as const,
-              from: {
-                key_code: key as KeyCode,
-                modifiers: {
-                  optional: ["any"],
-                },
+        description: `Hyper Key + ${key}`,
+        manipulators: [
+          {
+            ...value,
+            type: "basic" as const,
+            from: {
+              key_code: key as KeyCode,
+              modifiers: {
+                optional: ["any"],
               },
-              conditions: [
-                {
-                  type: "variable_if",
-                  name: "hyper",
-                  value: 1,
-                },
-                ...allSubLayerVariables.map((subLayerVariable) => ({
-                  type: "variable_if" as const,
-                  name: subLayerVariable,
-                  value: 0,
-                })),
-              ],
             },
-          ],
-        }
+            conditions: [
+              {
+                type: "variable_if",
+                name: "hyper",
+                value: 1,
+              },
+              ...allSubLayerVariables.map((subLayerVariable) => ({
+                type: "variable_if" as const,
+                name: subLayerVariable,
+                value: 0,
+              })),
+            ],
+          },
+        ],
+      }
       : {
-          description: `Hyper Key sublayer "${key}"`,
-          manipulators: createHyperSubLayer(
-            key as KeyCode,
-            value,
-            allSubLayerVariables
-          ),
-        }
+        description: `Hyper Key sublayer "${key}"`,
+        manipulators: createHyperSubLayer(
+          key as KeyCode,
+          value,
+          allSubLayerVariables
+        ),
+      }
   );
 }
 
@@ -169,6 +169,13 @@ export function open(what: string): LayerCommand {
 }
 
 /**
+ * Shortcut for "Open an app" command (of which there are a bunch)
+ */
+export function app(name: string): LayerCommand {
+  return open(`-a '${name}.app'`);
+}
+
+/**
  * Shortcut for managing windows with yabai
  */
 export function yabai(name: string): LayerCommand {
@@ -180,11 +187,4 @@ export function yabai(name: string): LayerCommand {
     ],
     description: `yabai ${name}`,
   };
-}
-
-/**
- * Shortcut for "Open an app" command (of which there are a bunch)
- */
-export function app(name: string): LayerCommand {
-  return open(`-a '${name}.app'`);
 }
