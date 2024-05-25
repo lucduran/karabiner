@@ -53,7 +53,7 @@ const rules: KarabinerRules[] = [
 
     spacebar: open("raycast://extensions/raycast/apple-reminders/create-reminder"),
 
-    // Closing windows
+    // Quick switch active window
     // Outside of window later to be used as a standalone shortcut for quick switching
     f: {
       to: [
@@ -66,7 +66,51 @@ const rules: KarabinerRules[] = [
 
     // w = "Window" via yabai
     w: {
-      d: {
+      z: yabai("--restart-service"),
+      // Tab nagivation
+      e: {
+        to: [
+          {
+            key_code: "open_bracket",
+            modifiers: ["command", "shift"],
+          },
+        ],
+      },
+      r: {
+        to: [
+          {
+            key_code: "close_bracket",
+            modifiers: ["command", "shift"],
+          },
+        ],
+      },
+      // Webpage nagivation
+      3: {
+        to: [
+          {
+            key_code: "open_bracket",
+            modifiers: ["command"],
+          },
+        ],
+      },
+      4: {
+        to: [
+          {
+            key_code: "close_bracket",
+            modifiers: ["command"],
+          },
+        ],
+      },
+      5: {
+        to: [
+          {
+            key_code: "l",
+            modifiers: ["command"],
+          },
+        ],
+      },
+      // Make window go away
+      f: {
         to: [
           {
             key_code: "h",
@@ -82,7 +126,6 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-
       // Focus manipulation
       j: yabai("-m window --focus west"),
       semicolon: yabai("-m window --focus east"),
@@ -104,7 +147,6 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-
       // Window swapping
       u: yabai("-m window --swap west"),
       p: yabai("-m window --swap east"),
@@ -113,7 +155,6 @@ const rules: KarabinerRules[] = [
       // Swap windows to spaces
       y: yabai("-m window --space prev"),
       open_bracket: yabai("-m window --space next"),
-
       // Window warping
       7: yabai("-m window --warp west"),
       0: yabai("-m window --warp east"),
@@ -123,8 +164,6 @@ const rules: KarabinerRules[] = [
       b: yabai("-m space --balance"),
       period: yabai("-m space --rotate 270"),
       comma: yabai("-m space --rotate 90"),
-
-      z: yabai("--restart-service"),
     },
 
     // o = "Open" applications
