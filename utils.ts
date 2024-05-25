@@ -169,7 +169,7 @@ export function open(what: string): LayerCommand {
 }
 
 /**
- * Shortcut for managing windows with yabai and skhd
+ * Shortcut for managing windows with yabai
  */
 export function yabai(name: string): LayerCommand {
   return {
