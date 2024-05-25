@@ -247,9 +247,7 @@ const rules: KarabinerRules[] = [
       a: open(`raycast://extensions/mattisssa/spotify-player/cycleRepeat?launchType=background`),
       u: open(`raycast://extensions/mattisssa/spotify-player/copyUrl?launchType=background`),
     },
-
-
-
+    
     // s = "System"
     s: {
       // Show hidden menu bar icons via Bartender.app
@@ -371,56 +369,7 @@ const rules: KarabinerRules[] = [
       o: {
         to: [{ key_code: "page_up" }],
       },
-
-      // System navigation
-      e: {
-        description: "Window: Previous Tab",
-        to: [
-          {
-            key_code: "tab",
-            modifiers: ["right_control", "right_shift"],
-          },
-        ],
-      },
-      r: {
-        description: "Window: Next Tab",
-        to: [
-          {
-            key_code: "tab",
-            modifiers: ["right_control"],
-          },
-        ],
-      },
-      9: {
-        description: "Browser: New Tab",
-        to: [
-          {
-            key_code: "t",
-            modifiers: ["right_command"],
-          },
-        ],
-      },
-      3: {
-        description: "Browser: Go Back",
-        to: [
-          {
-            key_code: "open_bracket",
-            modifiers: ["right_command"],
-          },
-        ],
-      },
-      4: {
-        description: "Browser: Go Forward",
-        to: [
-          {
-            key_code: "close_bracket",
-            modifiers: ["right_command"],
-          },
-        ],
-      },
     },
-
-
 
     // r = "Raycast"
     r: {
