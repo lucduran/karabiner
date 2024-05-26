@@ -58,7 +58,6 @@ const rules: KarabinerRules[] = [
       // Make window go away
       d: { to: [{ key_code: "w", modifiers: ["command"], },], },
       q: { to: [{ key_code: "q", modifiers: ["command"], },], },
-      // Quick hide active window
       // Tab nagivation
       t: { to: [{ key_code: "t", modifiers: ["command"], },], },
       e: { to: [{ key_code: "open_bracket", modifiers: ["command", "shift"], },], },
@@ -72,8 +71,10 @@ const rules: KarabinerRules[] = [
       semicolon: yabai("-m window --focus east"),
       k: yabai("-m window --focus south"),
       l: yabai("-m window --focus north"),
+      // Display focus
       h: yabai("-m display --focus prev"),
       quote: yabai("-m display --focus next"),
+      // Move between spaces
       slash: { to: [{ key_code: "right_arrow", modifiers: ["control"], },], },
       m: { to: [{ key_code: "left_arrow", modifiers: ["control"], },], },
       // Window resizing
