@@ -304,12 +304,10 @@
               {
                 "to": [
                   {
-                    "key_code": "h",
-                    "modifiers": [
-                      "command"
-                    ]
+                    "shell_command": "/opt/homebrew/bin/yabai -m window --minimize"
                   }
                 ],
+                "description": "yabai -m window --minimize",
                 "type": "basic",
                 "from": {
                   "key_code": "a",
@@ -657,7 +655,7 @@
                 ],
                 "type": "basic",
                 "from": {
-                  "key_code": "f",
+                  "key_code": "g",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -1003,10 +1001,34 @@
               {
                 "to": [
                   {
-                    "shell_command": "/opt/homebrew/bin/yabai -m window --resize right:-40:0 2> /dev/null || yabai -m window --resize left:-40:0 2> /dev/null"
+                    "shell_command": "/opt/homebrew/bin/yabai -m window --toggle zoom-fullscreen"
                   }
                 ],
-                "description": "yabai -m window --resize right:-40:0 2> /dev/null || yabai -m window --resize left:-40:0 2> /dev/null",
+                "description": "yabai -m window --toggle zoom-fullscreen",
+                "type": "basic",
+                "from": {
+                  "key_code": "f",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_w",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "/opt/homebrew/bin/yabai -m window --resize right:-40:0 2> /dev/null || /opt/homebrew/bin/yabai -m window --resize left:-40:0 2> /dev/null"
+                  }
+                ],
+                "description": "yabai -m window --resize right:-40:0 2> /dev/null || /opt/homebrew/bin/yabai -m window --resize left:-40:0 2> /dev/null",
                 "type": "basic",
                 "from": {
                   "key_code": "comma",
@@ -1027,10 +1049,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "/opt/homebrew/bin/yabai -m window --resize right:40:0 2> /dev/null || yabai -m window --resize left:40:0 2> /dev/null"
+                    "shell_command": "/opt/homebrew/bin/yabai -m window --resize right:40:0 2> /dev/null || /opt/homebrew/bin/yabai -m window --resize left:40:0 2> /dev/null"
                   }
                 ],
-                "description": "yabai -m window --resize right:40:0 2> /dev/null || yabai -m window --resize left:40:0 2> /dev/null",
+                "description": "yabai -m window --resize right:40:0 2> /dev/null || /opt/homebrew/bin/yabai -m window --resize left:40:0 2> /dev/null",
                 "type": "basic",
                 "from": {
                   "key_code": "period",
@@ -2978,6 +3000,30 @@
                 "type": "basic",
                 "from": {
                   "key_code": "d",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_s",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open raycast://script-commands/d1d5f97ad62a6692d70fc17da0a71157?launchType=background"
+                  }
+                ],
+                "description": "Open raycast://script-commands/d1d5f97ad62a6692d70fc17da0a71157?launchType=background",
+                "type": "basic",
+                "from": {
+                  "key_code": "r",
                   "modifiers": {
                     "optional": [
                       "any"

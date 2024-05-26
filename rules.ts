@@ -49,12 +49,12 @@ const rules: KarabinerRules[] = [
 
     // Quick switch active window
     f: { to: [{ key_code: "tab", modifiers: ["command"], },], },
-    // Quick hide active window
-    a: { to: [{ key_code: "h", modifiers: ["command"], },], },
+    // Quick minimize active window
+    a: yabai("-m window --minimize"),
     // w = "Window" via yabai
     w: {
       // Create new window/tab
-      f: { to: [{ key_code: "n", modifiers: ["command"], },], },
+      g: { to: [{ key_code: "n", modifiers: ["command"], },], },
       // Make window go away
       d: { to: [{ key_code: "w", modifiers: ["command"], },], },
       q: { to: [{ key_code: "q", modifiers: ["command"], },], },
@@ -78,12 +78,13 @@ const rules: KarabinerRules[] = [
       slash: { to: [{ key_code: "right_arrow", modifiers: ["control"], },], },
       m: { to: [{ key_code: "left_arrow", modifiers: ["control"], },], },
       // Window resizing
+      f: yabai("-m window --toggle zoom-fullscreen"),
       // shift + alt - h : yabai -m window --resize right:-20:0 2> /dev/null || yabai -m window --resize left:-20:0 2> /dev/null
       // shift + alt - j : yabai -m window --resize bottom:0:20 2> /dev/null || yabai -m window --resize top:0:20 2> /dev/null
       // shift + alt - k : yabai -m window --resize bottom:0:-20 2> /dev/null || yabai -m window --resize top:0:-20 2> /dev/null
       // shift + alt - l : yabai -m window --resize right:20:0 2> /dev/null || yabai -m window --resize left:20:0 2> /dev/null
-      comma: yabai("-m window --resize right:-40:0 2> /dev/null || yabai -m window --resize left:-40:0 2> /dev/null"),
-      period: yabai("-m window --resize right:40:0 2> /dev/null || yabai -m window --resize left:40:0 2> /dev/null"),
+      comma: yabai("-m window --resize right:-40:0 2> /dev/null || /opt/homebrew/bin/yabai -m window --resize left:-40:0 2> /dev/null"),
+      period: yabai("-m window --resize right:40:0 2> /dev/null || /opt/homebrew/bin/yabai -m window --resize left:40:0 2> /dev/null"),
       // Window swapping
       u: yabai("-m window --swap west"),
       p: yabai("-m window --swap east"),
@@ -190,7 +191,7 @@ const rules: KarabinerRules[] = [
       // q: open("raycast://extensions/third774/perplexity/ask-perplexity"),
       // Clipboard history
       h: open("raycast://extensions/raycast/clipboard-history/clipboard-history"),
-      // Connect Airpods and Beats Studio headphones
+      // Connect Airpods and Beats Studio 3 headphones
       1: open("raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-1?launchType=background"),
       2: open("raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-2?launchType=background"),
       // Airpods Pro controls
@@ -200,6 +201,8 @@ const rules: KarabinerRules[] = [
       q: open("raycast://extensions/raycast/system/quit-all-applications?launchType=background"),
       // "N"otifications-Do not disturb toggle
       d: open(`raycast://extensions/yakitrak/do-not-disturb/toggle?launchType=background`),
+      // r = "R"ead
+      r: open(`raycast://script-commands/d1d5f97ad62a6692d70fc17da0a71157?launchType=background`),
     },
 
     // v = "moVe" which isn't "m" because we want it to be on the left hand
