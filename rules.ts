@@ -87,6 +87,13 @@ const rules: KarabinerRules[] = [
     quote: { to: [{ key_code: "delete_or_backspace", },], },
     spacebar: open("raycast://extensions/raycast/apple-reminders/create-reminder"),
 
+    // Cursor control vis homerow.app
+    a: { to: [{ key_code: "m", modifiers: ["left_option", "left_shift"] }], },
+    // Search via homerow.app
+    x: { to: [{ key_code: "n", modifiers: ["left_option", "left_shift"] }], },
+    // Scroll mode via homerow.app
+    z: { to: [{ key_code: "s", modifiers: ["left_option", "left_shift"] }], },
+
     // Quick switch active window
     f: { to: [{ key_code: "tab", modifiers: ["command"], },], },
     // Quick minimize active window
@@ -253,12 +260,6 @@ const rules: KarabinerRules[] = [
       k: { to: [{ key_code: "down_arrow" }], },
       l: { to: [{ key_code: "up_arrow" }], },
       semicolon: { to: [{ key_code: "right_arrow" }], },
-      // Magicmove via homerow.app
-      m: { to: [{ key_code: "m", modifiers: ["right_control"] }], },
-      // Search via homerow.app
-      n: { to: [{ key_code: "n", modifiers: ["right_control"] }], },
-      // Scroll mode via homerow.app
-      s: { to: [{ key_code: "s", modifiers: ["right_control"] }], },
       i: { to: [{ key_code: "page_down" }], },
       o: { to: [{ key_code: "page_up" }], },
     },
