@@ -4,41 +4,9 @@
   },
   "profiles": [
     {
-      "name": "Luc's Godly Keyboard",
+      "name": "Default",
       "complex_modifications": {
         "rules": [
-          {
-            "description": "Change Alt to Command for a IBM Keyboard",
-            "manipulators": [
-              {
-                "from": {
-                  "key_code": "left_option"
-                },
-                "to": [
-                  {
-                    "key_code": "left_command"
-                  }
-                ],
-                "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "Change Windows Key to Option for a IBM Keyboard",
-            "manipulators": [
-              {
-                "from": {
-                  "key_code": "left_command"
-                },
-                "to": [
-                  {
-                    "key_code": "left_option"
-                  }
-                ],
-                "type": "basic"
-              }
-            ]
-          },
           {
             "description": "Hyper Key (⌃⌥⇧⌘)",
             "manipulators": [

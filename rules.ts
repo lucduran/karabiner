@@ -3,7 +3,48 @@ import { KarabinerRules } from "./types";
 import { createHyperSubLayers, app, open, yabai } from "./utils";
 
 const rules: KarabinerRules[] = [
-  // Define the Hyper key itself
+  {
+    description: "Change Alt to Command for a IBM Keyboard",
+    manipulators: [
+      {
+        from: { key_code: "left_option" },
+        to: [{ key_code: "left_command" }],
+        // I cannot for the life of me get this to work. For now I will just comment this out so I can use my IBM keyboard.
+        //         conditions: [
+        //           {
+        //             type: "device_if",
+        //             identifiers: {
+        //               vendor_id: 1203,
+        //               product_id: 12293,
+        //               is_keyboard: true,
+        //             },
+        //           },
+        //         ],
+        type: "basic",
+      },
+    ],
+  },
+  {
+    description: "Change Windows Key to Option for a IBM Keyboard",
+    manipulators: [
+      {
+        from: { key_code: "left_command" },
+        to: [{ key_code: "left_option" }],
+        // I cannot for the life of me get this to work. For now I will just comment this out so I can use my IBM keyboard.
+        //         conditions: [
+        //           {
+        //             type: "device_if",
+        //             identifiers: {
+        //               vendor_id: 1203,
+        //               product_id: 12293,
+        //               is_keyboard: true,
+        //             },
+        //           },
+        //         ],
+        type: "basic",
+      },
+    ],
+  },
   {
     description: "Hyper Key (⌃⌥⇧⌘)",
     manipulators: [
@@ -44,13 +85,12 @@ const rules: KarabinerRules[] = [
 
     // Remap delete to hyper + quote
     quote: { to: [{ key_code: "delete_or_backspace", },], },
-
     spacebar: open("raycast://extensions/raycast/apple-reminders/create-reminder"),
 
     // Quick switch active window
     f: { to: [{ key_code: "tab", modifiers: ["command"], },], },
     // Quick minimize active window
-    a: yabai("-m window --minimize"),
+    d: yabai("-m window --minimize"),
     // w = "Window" via yabai
     w: {
       // Create new window/tab
@@ -111,6 +151,7 @@ const rules: KarabinerRules[] = [
       b: app("Brave Browser"),
       f: app("Finder"),
       m: app("Messages"),
+      h: app("Snapchat"),
       // Productivity
       c: app("Calendar"),
       r: app("Reminders"),
@@ -186,7 +227,7 @@ const rules: KarabinerRules[] = [
       v: open("raycast://extensions/0x46616c6b/mullvad/disconnect?launchType=background"),
       // Caffeinate toggle
       // a = "A"wake
-      a: open("raycast://extensions/mooxl/coffee/caffeinateToggle?launchType=background"),
+      a: open("raycast://extensions/mooxl/coffee/caffeinateToggle"),
       // q = "Q"uestion
       // q: open("raycast://extensions/third774/perplexity/ask-perplexity"),
       // Clipboard history
@@ -227,7 +268,7 @@ const rules: KarabinerRules[] = [
   }),
 ];
 
-fs.writeFileSync("karabiner.json", JSON.stringify({ global: { show_in_menu_bar: false, }, profiles: [{ name: "Default", complex_modifications: { rules, }, },], }, null, 2));
+fs.writeFileSync("karabiner.json", JSON.stringify({ global: { show_in_menu_bar: false, }, profiles: [{ name: "Luc's Godly Keyboard", complex_modifications: { rules }, },], }, null, 2));
 
 /* Hide Dock
 defaults write com.apple.dock autohide -bool true && killall Dock

@@ -4,41 +4,9 @@
   },
   "profiles": [
     {
-      "name": "Luc's Godly Keyboard",
+      "name": "Default",
       "complex_modifications": {
         "rules": [
-          {
-            "description": "Change Alt to Command for a IBM Keyboard",
-            "manipulators": [
-              {
-                "from": {
-                  "key_code": "left_option"
-                },
-                "to": [
-                  {
-                    "key_code": "left_command"
-                  }
-                ],
-                "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "Change Windows Key to Option for a IBM Keyboard",
-            "manipulators": [
-              {
-                "from": {
-                  "key_code": "left_command"
-                },
-                "to": [
-                  {
-                    "key_code": "left_option"
-                  }
-                ],
-                "type": "basic"
-              }
-            ]
-          },
           {
             "description": "Hyper Key (⌃⌥⇧⌘)",
             "manipulators": [
@@ -118,7 +86,7 @@
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_d",
+                    "name": "hyper_sublayer_a",
                     "value": 0
                   },
                   {
@@ -202,7 +170,7 @@
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_d",
+                    "name": "hyper_sublayer_a",
                     "value": 0
                   },
                   {
@@ -288,7 +256,7 @@
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_d",
+                    "name": "hyper_sublayer_a",
                     "value": 0
                   },
                   {
@@ -331,7 +299,7 @@
             ]
           },
           {
-            "description": "Hyper Key + d",
+            "description": "Hyper Key + a",
             "manipulators": [
               {
                 "to": [
@@ -342,7 +310,7 @@
                 "description": "yabai -m window --minimize",
                 "type": "basic",
                 "from": {
-                  "key_code": "d",
+                  "key_code": "a",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -372,7 +340,7 @@
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_d",
+                    "name": "hyper_sublayer_a",
                     "value": 0
                   },
                   {
@@ -462,7 +430,7 @@
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_d",
+                    "name": "hyper_sublayer_a",
                     "value": 0
                   },
                   {
@@ -1344,7 +1312,7 @@
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_d",
+                    "name": "hyper_sublayer_a",
                     "value": 0
                   },
                   {
@@ -1442,30 +1410,6 @@
                 "type": "basic",
                 "from": {
                   "key_code": "m",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_o",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "shell_command": "open -a 'Snapchat.app'"
-                  }
-                ],
-                "description": "Open -a 'Snapchat.app'",
-                "type": "basic",
-                "from": {
-                  "key_code": "h",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -1866,7 +1810,7 @@
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_d",
+                    "name": "hyper_sublayer_a",
                     "value": 0
                   },
                   {
@@ -2290,7 +2234,7 @@
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_d",
+                    "name": "hyper_sublayer_a",
                     "value": 0
                   },
                   {
@@ -2596,7 +2540,7 @@
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_d",
+                    "name": "hyper_sublayer_a",
                     "value": 0
                   },
                   {
@@ -2977,10 +2921,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open raycast://extensions/mooxl/coffee/caffeinateToggle"
+                    "shell_command": "open raycast://extensions/mooxl/coffee/caffeinateToggle?launchType=background"
                   }
                 ],
-                "description": "Open raycast://extensions/mooxl/coffee/caffeinateToggle",
+                "description": "Open raycast://extensions/mooxl/coffee/caffeinateToggle?launchType=background",
                 "type": "basic",
                 "from": {
                   "key_code": "a",
@@ -3144,7 +3088,7 @@
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_d",
+                    "name": "hyper_sublayer_a",
                     "value": 0
                   },
                   {
@@ -3450,7 +3394,7 @@
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_d",
+                    "name": "hyper_sublayer_a",
                     "value": 0
                   },
                   {
