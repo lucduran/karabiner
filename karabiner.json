@@ -1755,6 +1755,29 @@
               {
                 "to": [
                   {
+                    "shell_command": "/opt/homebrew/bin/code -n ~/.config"
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "u",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_o",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
                     "shell_command": "open -a 'Slack.app'"
                   }
                 ],

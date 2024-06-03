@@ -159,6 +159,7 @@ const rules: KarabinerRules[] = [
       n: app('Notes'),
       v: app('Visual Studio Code'),
       t: app('iTerm'),
+      u: { to: [{ shell_command: '/opt/homebrew/bin/code -n ~/.config' }] },
       // Work
       s: app('Slack'),
       g: app('Google Chrome'),
