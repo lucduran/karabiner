@@ -118,8 +118,8 @@ const rules: KarabinerRules[] = [
     // w = 'Window' via yabai
     w: {
       // Window focus
-      k: { to: [{ key_code: 'tab', modifiers: ['command', 'shift'], },], },
-      l: { to: [{ key_code: 'tab', modifiers: ['command'], },], },
+      k: { to: [{ shell_command: '/opt/homebrew/bin/hs -c \'cycleBackward()\'' }] },
+      l: { to: [{ shell_command: '/opt/homebrew/bin/hs -c \'cycleForward()\'' }] },
       // Window resizing
       j: rectangle("left-half"),
       semicolon: rectangle("right-half"),

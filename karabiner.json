@@ -983,11 +983,7 @@
               {
                 "to": [
                   {
-                    "key_code": "tab",
-                    "modifiers": [
-                      "command",
-                      "shift"
-                    ]
+                    "shell_command": "/opt/homebrew/bin/hs -c 'cycleBackward()'"
                   }
                 ],
                 "type": "basic",
@@ -1010,10 +1006,7 @@
               {
                 "to": [
                   {
-                    "key_code": "tab",
-                    "modifiers": [
-                      "command"
-                    ]
+                    "shell_command": "/opt/homebrew/bin/hs -c 'cycleForward()'"
                   }
                 ],
                 "type": "basic",
