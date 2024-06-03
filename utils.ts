@@ -113,40 +113,40 @@ export function createHyperSubLayers(subLayers: {
   return Object.entries(subLayers).map(([key, value]) =>
     "to" in value
       ? {
-        description: `Hyper Key + ${key}`,
-        manipulators: [
-          {
-            ...value,
-            type: "basic" as const,
-            from: {
-              key_code: key as KeyCode,
-              modifiers: {
-                optional: ["any"],
+          description: `Hyper Key + ${key}`,
+          manipulators: [
+            {
+              ...value,
+              type: "basic" as const,
+              from: {
+                key_code: key as KeyCode,
+                modifiers: {
+                  optional: ["any"],
+                },
               },
+              conditions: [
+                {
+                  type: "variable_if",
+                  name: "hyper",
+                  value: 1,
+                },
+                ...allSubLayerVariables.map((subLayerVariable) => ({
+                  type: "variable_if" as const,
+                  name: subLayerVariable,
+                  value: 0,
+                })),
+              ],
             },
-            conditions: [
-              {
-                type: "variable_if",
-                name: "hyper",
-                value: 1,
-              },
-              ...allSubLayerVariables.map((subLayerVariable) => ({
-                type: "variable_if" as const,
-                name: subLayerVariable,
-                value: 0,
-              })),
-            ],
-          },
-        ],
-      }
+          ],
+        }
       : {
-        description: `Hyper Key sublayer "${key}"`,
-        manipulators: createHyperSubLayer(
-          key as KeyCode,
-          value,
-          allSubLayerVariables
-        ),
-      }
+          description: `Hyper Key sublayer "${key}"`,
+          manipulators: createHyperSubLayer(
+            key as KeyCode,
+            value,
+            allSubLayerVariables
+          ),
+        }
   );
 }
 
@@ -157,14 +157,51 @@ function generateSubLayerVariableName(key: KeyCode) {
 /**
  * Shortcut for "open" shell command
  */
-export function open(what: string): LayerCommand {
+export function open(...what: string[]): LayerCommand {
+  return {
+    to: what.map((w) => ({
+      shell_command: `open ${w}`,
+    })),
+    description: `Open ${what.join(" & ")}`,
+  };
+}
+
+/**
+ * Utility function to create a LayerCommand from a tagged template literal
+ * where each line is a shell command to be executed.
+ */
+export function shell(
+  strings: TemplateStringsArray,
+  ...values: any[]
+): LayerCommand {
+  const commands = strings.reduce((acc, str, i) => {
+    const value = i < values.length ? values[i] : "";
+    const lines = (str + value)
+      .split("\n")
+      .filter((line) => line.trim() !== "");
+    acc.push(...lines);
+    return acc;
+  }, [] as string[]);
+
+  return {
+    to: commands.map((command) => ({
+      shell_command: command.trim(),
+    })),
+    description: commands.join(" && "),
+  };
+}
+
+/**
+ * Shortcut for managing window sizing with Rectangle
+ */
+export function rectangle(name: string): LayerCommand {
   return {
     to: [
       {
-        shell_command: `open ${what}`,
+        shell_command: `open -g rectangle://execute-action?name=${name}`,
       },
     ],
-    description: `Open ${what}`,
+    description: `Window: ${name}`,
   };
 }
 
@@ -173,18 +210,4 @@ export function open(what: string): LayerCommand {
  */
 export function app(name: string): LayerCommand {
   return open(`-a '${name}.app'`);
-}
-
-/**
- * Shortcut for managing windows with yabai
- */
-export function yabai(name: string): LayerCommand {
-  return {
-    to: [
-      {
-        shell_command: `/opt/homebrew/bin/yabai ${name}`,
-      },
-    ],
-    description: `yabai ${name}`,
-  };
 }
