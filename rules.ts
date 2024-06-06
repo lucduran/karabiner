@@ -3,48 +3,48 @@ import { KarabinerRules } from './types';
 import { createHyperSubLayers, app, open, rectangle } from './utils';
 
 const rules: KarabinerRules[] = [
-  {
-    description: 'Change Alt to Command for a IBM Keyboard',
-    manipulators: [
-      {
-        from: { key_code: 'left_option' },
-        to: [{ key_code: 'left_command' }],
-        // I cannot for the life of me get this to work. For now I will just comment this out so I can use my IBM keyboard.
-        //         conditions: [
-        //           {
-        //             type: 'device_if',
-        //             identifiers: {
-        //               vendor_id: 1203,
-        //               product_id: 12293,
-        //               is_keyboard: true,
-        //             },
-        //           },
-        //         ],
-        type: 'basic',
-      },
-    ],
-  },
-  {
-    description: 'Change Windows Key to Option for a IBM Keyboard',
-    manipulators: [
-      {
-        from: { key_code: 'left_command' },
-        to: [{ key_code: 'left_option' }],
-        // I cannot for the life of me get this to work. For now I will just comment this out so I can use my IBM keyboard.
-        //         conditions: [
-        //           {
-        //             type: 'device_if',
-        //             identifiers: {
-        //               vendor_id: 1203,
-        //               product_id: 12293,ß
-        //               is_keyboard: true,
-        //             },
-        //           },
-        //         ],
-        type: 'basic',
-      },
-    ],
-  },
+  /* {
+     description: 'Change Alt to Command for a IBM Keyboard',
+     manipulators: [
+       {
+         from: { key_code: 'left_option' },
+         to: [{ key_code: 'left_command' }],
+         // I cannot for the life of me get this to work. For now I will just comment this out so I can use my IBM keyboard.
+         //         conditions: [
+         //           {
+         //             type: 'device_if',
+         //             identifiers: {
+         //               vendor_id: 1203,
+         //               product_id: 12293,
+         //               is_keyboard: true,
+         //             },
+         //           },
+         //         ],
+         type: 'basic',
+       },
+     ],
+   },
+   {
+     description: 'Change Windows Key to Option for a IBM Keyboard',
+     manipulators: [
+       {
+         from: { key_code: 'left_command' },
+         to: [{ key_code: 'left_option' }],
+         // I cannot for the life of me get this to work. For now I will just comment this out so I can use my IBM keyboard.
+         //         conditions: [
+         //           {
+         //             type: 'device_if',
+         //             identifiers: {
+         //               vendor_id: 1203,
+         //               product_id: 12293,ß
+         //               is_keyboard: true,
+         //             },
+         //           },
+         //         ],
+         type: 'basic',
+       },
+     ],
+   }, */
   {
     description: 'Hyper Key (⌃⌥⇧⌘)',
     manipulators: [
@@ -79,21 +79,21 @@ const rules: KarabinerRules[] = [
         ],
         type: 'basic',
       },
-      {
-        type: 'basic',
-        description: 'Disable CMD + Tab to force Hyper Key usage',
-        from: {
-          key_code: 'tab',
-          modifiers: {
-            mandatory: ['left_command'],
-          },
-        },
-        to: [
-          {
-            key_code: 'tab',
-          },
-        ],
-      },
+      /*       {
+              type: 'basic',
+              description: 'Disable CMD + Tab to force Hyper Key usage',
+              from: {
+                key_code: 'tab',
+                modifiers: {
+                  mandatory: ['left_command'],
+                },
+              },
+              to: [
+                {
+                  key_code: 'tab',
+                },
+              ],
+            }, */
     ],
   },
   ...createHyperSubLayers({
@@ -111,26 +111,25 @@ const rules: KarabinerRules[] = [
     // Search via homerow.app
     z: { to: [{ key_code: 'n', modifiers: ['left_option', 'left_shift'] }], },
 
-    // Raycast
+    //  Command + Tab shortcut
+    g: { to: [{ key_code: 'tab', modifiers: ['command'], },], },
+    // Raycast shortcut
     f: { to: [{ key_code: 'spacebar', modifiers: ['command'], },], },
     // Quick minimize active window
     d: { to: [{ key_code: 'm', modifiers: ['command'], },], },
     // w = 'Window' via yabai
     w: {
-      // Window focus
-      k: { to: [{ shell_command: '/opt/homebrew/bin/hs -c \'cycleBackward()\'' }] },
-      l: { to: [{ shell_command: '/opt/homebrew/bin/hs -c \'cycleForward()\'' }] },
       // Window resizing
-      j: rectangle("left-half"),
-      semicolon: rectangle("right-half"),
-      u: rectangle("top-left"),
-      p: rectangle("top-right"),
-      i: rectangle("bottom-left"),
-      o: rectangle("bottom-right"),
-      f: rectangle("maximize"),
+      j: rectangle('left-half'),
+      semicolon: rectangle('right-half'),
+      u: rectangle('top-left'),
+      p: rectangle('top-right'),
+      i: rectangle('bottom-left'),
+      o: rectangle('bottom-right'),
+      f: rectangle('maximize'),
       // Move between displays
-      m: rectangle("previous-display"),
-      slash: rectangle("next-display"),
+      m: rectangle('previous-display'),
+      slash: rectangle('next-display'),
       // Move between spaces
       comma: { to: [{ key_code: 'left_arrow', modifiers: ['control'], },], },
       period: { to: [{ key_code: 'right_arrow', modifiers: ['control'], },], },
@@ -159,14 +158,13 @@ const rules: KarabinerRules[] = [
       n: app('Notes'),
       v: app('Visual Studio Code'),
       t: app('iTerm'),
-      u: { to: [{ shell_command: '/opt/homebrew/bin/code -n ~/.config' }] },
       // Work
       s: app('Slack'),
       g: app('Google Chrome'),
       k: app('Airtable'),
       e: app('Figma'),
       // Entertainment
-      p: app('Spotify'),
+      p: app('Tidal'),
       d: app('Discord'),
       l: app('Prism Launcher'),
       semicolon: app('Fabulously Optimized 5.12.0-alpha.4'),
@@ -186,23 +184,11 @@ const rules: KarabinerRules[] = [
       i: open('https://www.instagram.com/'),
       l: open('https://www.linkedin.com/'),
       g: open('https://github.com/lucduran/'),
+      u: { to: [{ shell_command: '/opt/homebrew/bin/code -n ~/.config' }] },
       // 'W'eWeb
       w: { to: [{ shell_command: 'open -a \'Google Chrome\' \'https://editor.weweb.io/47aa0874-ee85-4f94-bdd0-4d864392c9a1\'' }] },
       // 'X'ano
       x: { to: [{ shell_command: 'open -a \'Google Chrome\' \'https://xdw0-sipj-awhp.n7.xano.io/workspace/3-0/dashboard\'' }] },
-    },
-
-    // c = musi'C'
-    c: {
-      p: open(`raycast://extensions/mattisssa/spotify-player/togglePlayPause?launchType=background`),
-      m: open(`raycast://extensions/mattisssa/spotify-player/next?launchType=background`),
-      n: open(`raycast://extensions/mattisssa/spotify-player/previous?launchType=background`),
-      l: open(`raycast://extensions/mattisssa/spotify-player/like?launchType=background`),
-      d: open(`raycast://extensions/mattisssa/spotify-player/dislike?launchType=background`),
-      s: open(`raycast://extensions/mattisssa/spotify-player/nowPlaying`),
-      r: open(`raycast://extensions/mattisssa/spotify-player/startRadio?launchType=background`),
-      a: open(`raycast://extensions/mattisssa/spotify-player/cycleRepeat?launchType=background`),
-      u: open(`raycast://extensions/mattisssa/spotify-player/copyUrl?launchType=background`),
     },
 
     // s = 'System'
@@ -217,6 +203,8 @@ const rules: KarabinerRules[] = [
       k: { to: [{ key_code: 'display_brightness_decrement', },], },
       // Lock screen
       l: { to: [{ key_code: 'q', modifiers: ['right_control', 'right_command'], },], },
+      // Mission control
+      semicolon: { to: [{ key_code: 'f3', modifiers: ['fn'] }], },
       // Media controls
       p: { to: [{ key_code: 'play_or_pause' }], },
       m: { to: [{ key_code: 'fastforward' }], },
@@ -228,22 +216,19 @@ const rules: KarabinerRules[] = [
       v: open('raycast://extensions/0x46616c6b/mullvad/disconnect?launchType=background'),
       // Caffeinate toggle
       // a = 'A'wake
-      a: open('raycast://extensions/mooxl/coffee/caffeinateToggle'),
-      // q = 'Q'uestion
-      // q: open('raycast://extensions/third774/perplexity/ask-perplexity'),
+      a: open('raycast://extensions/mooxl/coffee/caffeinateToggle?launchType=background'),
       // Clipboard history
       h: open('raycast://extensions/raycast/clipboard-history/clipboard-history'),
       // Connect Airpods and Beats Studio 3 headphones
       1: open('raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-1?launchType=background'),
       2: open('raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-2?launchType=background'),
       // Airpods Pro controls
-      // TODO: Fix extention toggle between wrong modes
-      // t: open('raycast://extensions/chrahe/airpods-noise-control/index'),
+      t: open('raycast://extensions/chrahe/airpods-noise-control/index?launchType=background'),
       // Quit all applications
       q: open('raycast://extensions/raycast/system/quit-all-applications?launchType=background'),
       // 'N'otifications-Do not disturb toggle
       d: open(`raycast://extensions/yakitrak/do-not-disturb/toggle?launchType=background`),
-      // r = 'R'ead
+      // r = 'R'ead notifications
       r: open(`raycast://script-commands/d1d5f97ad62a6692d70fc17da0a71157?launchType=background`),
     },
 
@@ -265,12 +250,17 @@ const rules: KarabinerRules[] = [
 
 fs.writeFileSync('karabiner.json', JSON.stringify({ global: { show_in_menu_bar: false, }, profiles: [{ name: 'Luc\'s Godly Keyboard', complex_modifications: { rules }, },], }, null, 2));
 
-/* Hide Dock
+/* == Hide Dock ==
 defaults write com.apple.dock autohide -bool true && killall Dock
 defaults write com.apple.dock autohide-delay -float 1000 && killall Dock
 defaults write com.apple.dock no-bouncing -bool TRUE && killall Dock
-
-Show Dock
+== Show Dock ==
 defaults write com.apple.dock autohide -bool false && killall Dock
 defaults delete com.apple.dock autohide-delay && killall Dock
-defaults write com.apple.dock no-bouncing -bool FALSE && killall Dock */
+defaults write com.apple.dock no-bouncing -bool FALSE && killall Dock
+
+== Remap default music service via notunes.app ==
+defaults write digital.twisted.noTunes replacement /Applications/YOUR_MUSIC_APP.app
+defaults write digital.twisted.noTunes replacement https://music.youtube.com/
+== Restore default music service ==
+defaults delete digital.twisted.noTunes replacement*/
