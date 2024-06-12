@@ -2731,6 +2731,32 @@
               {
                 "to": [
                   {
+                    "key_code": "f3",
+                    "modifiers": [
+                      "fn"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "semicolon",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_s",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
                     "key_code": "play_or_pause"
                   }
                 ],

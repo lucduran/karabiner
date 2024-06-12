@@ -3,48 +3,48 @@ import { KarabinerRules } from './types';
 import { createHyperSubLayers, app, open, rectangle } from './utils';
 
 const rules: KarabinerRules[] = [
-  /* {
-     description: 'Change Alt to Command for a IBM Keyboard',
-     manipulators: [
-       {
-         from: { key_code: 'left_option' },
-         to: [{ key_code: 'left_command' }],
-         // I cannot for the life of me get this to work. For now I will just comment this out so I can use my IBM keyboard.
-         //         conditions: [
-         //           {
-         //             type: 'device_if',
-         //             identifiers: {
-         //               vendor_id: 1203,
-         //               product_id: 12293,
-         //               is_keyboard: true,
-         //             },
-         //           },
-         //         ],
-         type: 'basic',
-       },
-     ],
-   },
-   {
-     description: 'Change Windows Key to Option for a IBM Keyboard',
-     manipulators: [
-       {
-         from: { key_code: 'left_command' },
-         to: [{ key_code: 'left_option' }],
-         // I cannot for the life of me get this to work. For now I will just comment this out so I can use my IBM keyboard.
-         //         conditions: [
-         //           {
-         //             type: 'device_if',
-         //             identifiers: {
-         //               vendor_id: 1203,
-         //               product_id: 12293,ß
-         //               is_keyboard: true,
-         //             },
-         //           },
-         //         ],
-         type: 'basic',
-       },
-     ],
-   }, */
+/*  {
+    description: 'Change Alt to Command for a IBM Keyboard',
+    manipulators: [
+      {
+        from: { key_code: 'left_option' },
+        to: [{ key_code: 'left_command' }],
+        // I cannot for the life of me get this to work. For now I will just comment this out so I can use my IBM keyboard.
+        //         conditions: [
+        //           {
+        //             type: 'device_if',
+        //             identifiers: {
+        //               vendor_id: 1203,
+        //               product_id: 12293,
+        //               is_keyboard: true,
+        //             },
+        //           },
+        //         ],
+        type: 'basic',
+      },
+    ],
+  },
+  {
+    description: 'Change Windows Key to Option for a IBM Keyboard',
+    manipulators: [
+      {
+        from: { key_code: 'left_command' },
+        to: [{ key_code: 'left_option' }],
+        // I cannot for the life of me get this to work. For now I will just comment this out so I can use my IBM keyboard.
+        //         conditions: [
+        //           {
+        //             type: 'device_if',
+        //             identifiers: {
+        //               vendor_id: 1203,
+        //               product_id: 12293,ß
+        //               is_keyboard: true,
+        //             },
+        //           },
+        //         ],
+        type: 'basic',
+      },
+    ],
+  }, */
   {
     description: 'Hyper Key (⌃⌥⇧⌘)',
     manipulators: [
@@ -117,7 +117,7 @@ const rules: KarabinerRules[] = [
     f: { to: [{ key_code: 'spacebar', modifiers: ['command'], },], },
     // Quick minimize active window
     d: { to: [{ key_code: 'm', modifiers: ['command'], },], },
-    // w = 'Window' via yabai
+    // w = 'Window' via rectangle.com
     w: {
       // Window resizing
       j: rectangle('left-half'),
@@ -149,6 +149,7 @@ const rules: KarabinerRules[] = [
     o: {
       b: app('Brave Browser'),
       f: app('Finder'),
+      y: app('System Settings'),
       m: app('Messages'),
       h: app('Snapchat'),
       // Productivity
@@ -203,8 +204,6 @@ const rules: KarabinerRules[] = [
       k: { to: [{ key_code: 'display_brightness_decrement', },], },
       // Lock screen
       l: { to: [{ key_code: 'q', modifiers: ['right_control', 'right_command'], },], },
-      // Mission control
-      semicolon: { to: [{ key_code: 'f3', modifiers: ['fn'] }], },
       // Media controls
       p: { to: [{ key_code: 'play_or_pause' }], },
       m: { to: [{ key_code: 'fastforward' }], },
