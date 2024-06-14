@@ -182,8 +182,7 @@ const rules: KarabinerRules[] = [
       m: open('https://www.google.com/maps'),
       e: open('https://mail.google.com/mail/u/0/'),
       a: open('https://www.amazon.com/'),
-      i: open('https://www.instagram.com/'),
-      l: open('https://www.linkedin.com/'),
+      p: open('https://www.perplexity.ai/'),
       g: open('https://github.com/lucduran/'),
       u: { to: [{ shell_command: '/opt/homebrew/bin/code -n ~/.config' }] },
       // 'W'eWeb
@@ -232,7 +231,7 @@ const rules: KarabinerRules[] = [
     },
 
     // v = 'moVe' which isn't 'm' because we want it to be on the left hand
-    // so that hjkl work like they do in vim
+    // so that jkl; work like they do in vim with hjkl
     v: {
       j: { to: [{ key_code: 'left_arrow' }], },
       k: { to: [{ key_code: 'down_arrow' }], },
@@ -243,6 +242,7 @@ const rules: KarabinerRules[] = [
     },
 
     // h = 'H'ome
+    // One day this will be for Home Assistant when I can afford a home :)
     h: {},
   }),
 ];
