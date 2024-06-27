@@ -127,6 +127,9 @@ const rules: KarabinerRules[] = [
       i: rectangle('bottom-left'),
       o: rectangle('bottom-right'),
       f: rectangle('maximize'),
+      // Command + Tab remap
+      k: { to: [{ key_code: 'tab', modifiers: ['command', 'shift'], },], },
+      l: { to: [{ key_code: 'tab', modifiers: ['command'], },], },
       // Move between displays
       m: rectangle('previous-display'),
       slash: rectangle('next-display'),
@@ -168,7 +171,6 @@ const rules: KarabinerRules[] = [
       p: app('Tidal'),
       d: app('Discord'),
       l: app('Prism Launcher'),
-      semicolon: app('Fabulously Optimized 5.12.0-alpha.4'),
     },
 
     // b = 'B'rowse
@@ -219,7 +221,6 @@ const rules: KarabinerRules[] = [
       h: open('raycast://extensions/raycast/clipboard-history/clipboard-history'),
       // Connect Airpods and Beats Studio 3 headphones
       1: open('raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-1?launchType=background'),
-      2: open('raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-2?launchType=background'),
       // Airpods Pro controls
       t: open('raycast://extensions/chrahe/airpods-noise-control/index?launchType=background'),
       // Quit all applications
