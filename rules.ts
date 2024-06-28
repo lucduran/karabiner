@@ -104,7 +104,7 @@ const rules: KarabinerRules[] = [
     // Create new reminder
     spacebar: open('raycast://extensions/raycast/apple-reminders/create-reminder'),
 
-    // Cursor control via homerow.app
+    // Cursor & scroll control via homerow.app
     a: { to: [{ key_code: 'm', modifiers: ['left_option', 'left_shift'] }], },
     // Scroll mode via homerow.app
     q: { to: [{ key_code: 's', modifiers: ['left_option', 'left_shift'] }], },
@@ -115,7 +115,7 @@ const rules: KarabinerRules[] = [
     f: { to: [{ key_code: 'spacebar', modifiers: ['command'], },], },
     // Quick minimize active window
     d: { to: [{ key_code: 'm', modifiers: ['command'], },], },
-    // w = 'Window' via rectangle.com
+    // w = 'Window' via rectangle.app
     w: {
       // Window resizing
       j: rectangle('left-half'),
