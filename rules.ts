@@ -98,8 +98,8 @@ const rules: KarabinerRules[] = [
   },
   ...createHyperSubLayers({
 
-    // Remap delete to hyper + quote
-    quote: { to: [{ key_code: 'delete_or_backspace', },], },
+    // Remap delete to hyper + colon
+    semicolon: { to: [{ key_code: 'delete_or_backspace', },], },
 
     // Create new reminder
     spacebar: open('raycast://extensions/raycast/apple-reminders/create-reminder'),
@@ -111,8 +111,6 @@ const rules: KarabinerRules[] = [
     // Search via homerow.app
     z: { to: [{ key_code: 'n', modifiers: ['left_option', 'left_shift'] }], },
 
-    //  Command + Tab shortcut
-    g: { to: [{ key_code: 'tab', modifiers: ['command'], },], },
     // Raycast shortcut
     f: { to: [{ key_code: 'spacebar', modifiers: ['command'], },], },
     // Quick minimize active window
@@ -169,8 +167,19 @@ const rules: KarabinerRules[] = [
       e: app('Figma'),
       // Entertainment
       p: app('Tidal'),
-      d: app('Discord'),
-      l: app('Prism Launcher'),
+    },
+
+  // g = 'Games'
+  g: {
+    d: app('Discord'),
+    m: app('Prism Launcher'),
+    s: app("SUPERHOT MIND CONTROL DELETE"),
+    c: app("Cuphead"),
+  },
+
+    // m = 'Multiple' applications
+    m: {
+      // Rentzap
     },
 
     // b = 'B'rowse
