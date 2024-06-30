@@ -98,6 +98,9 @@ const rules: KarabinerRules[] = [
   },
   ...createHyperSubLayers({
 
+    // Remap enter to hyper + quote
+    quote: { to: [{ key_code: 'return_or_enter', },], },
+
     // Remap delete to hyper + colon
     semicolon: { to: [{ key_code: 'delete_or_backspace', },], },
 
@@ -171,9 +174,10 @@ const rules: KarabinerRules[] = [
 
   // g = 'Games'
   g: {
+    s: app("Steam"),
     d: app('Discord'),
     m: app('Prism Launcher'),
-    s: app("SUPERHOT MIND CONTROL DELETE"),
+    h: app("SUPERHOT MIND CONTROL DELETE"),
     c: app("Cuphead"),
   },
 
