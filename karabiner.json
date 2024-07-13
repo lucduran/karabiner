@@ -2985,33 +2985,6 @@
               {
                 "to": [
                   {
-                    "key_code": "b",
-                    "modifiers": [
-                      "option",
-                      "shift"
-                    ]
-                  }
-                ],
-                "type": "basic",
-                "from": {
-                  "key_code": "b",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_s",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
                     "key_code": "volume_increment"
                   }
                 ],

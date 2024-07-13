@@ -208,8 +208,6 @@ const rules: KarabinerRules[] = [
 
     // s = 'System'
     s: {
-      // Show hidden menu bar icons via Bartender.app
-      b: { to: [{ key_code: 'b', modifiers: ['option', 'shift'], },], },
       // Volume control
       u: { to: [{ key_code: 'volume_increment', },], },
       j: { to: [{ key_code: 'volume_decrement', },], },
@@ -232,7 +230,7 @@ const rules: KarabinerRules[] = [
       a: open('raycast://extensions/mooxl/coffee/caffeinateToggle?launchType=background'),
       // Clipboard history
       h: open('raycast://extensions/raycast/clipboard-history/clipboard-history'),
-      // Connect Airpods and Beats Studio 3 headphones
+      // Connect Airpods Pro
       1: open('raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-1?launchType=background'),
       // Airpods Pro controls
       t: open('raycast://extensions/chrahe/airpods-noise-control/index?launchType=background'),
