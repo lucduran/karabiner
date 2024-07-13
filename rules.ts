@@ -129,8 +129,8 @@ const rules: KarabinerRules[] = [
       o: rectangle('bottom-right'),
       f: rectangle('maximize'),
       // Command + Tab remap
-      // comma: { to: [{ key_code: 'tab', modifiers: ['command', 'shift'], },], },
-      // period: { to: [{ key_code: 'tab', modifiers: ['command'], },], },
+      comma: { to: [{ key_code: 'tab', modifiers: ['command', 'shift'], },], },
+      period: { to: [{ key_code: 'tab', modifiers: ['command'], },], },
       // Move between displays
       // m: rectangle('previous-display'),
       // slash: rectangle('next-display'),
