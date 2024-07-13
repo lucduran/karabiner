@@ -129,14 +129,14 @@ const rules: KarabinerRules[] = [
       o: rectangle('bottom-right'),
       f: rectangle('maximize'),
       // Command + Tab remap
-      k: { to: [{ key_code: 'tab', modifiers: ['command', 'shift'], },], },
-      l: { to: [{ key_code: 'tab', modifiers: ['command'], },], },
+      // comma: { to: [{ key_code: 'tab', modifiers: ['command', 'shift'], },], },
+      // period: { to: [{ key_code: 'tab', modifiers: ['command'], },], },
       // Move between displays
-      m: rectangle('previous-display'),
-      slash: rectangle('next-display'),
+      // m: rectangle('previous-display'),
+      // slash: rectangle('next-display'),
       // Move between spaces
-      comma: { to: [{ key_code: 'left_arrow', modifiers: ['control'], },], },
-      period: { to: [{ key_code: 'right_arrow', modifiers: ['control'], },], },
+      k: { to: [{ key_code: 'left_arrow', modifiers: ['control'], },], },
+      l: { to: [{ key_code: 'right_arrow', modifiers: ['control'], },], },
       // Create new
       t: { to: [{ key_code: 't', modifiers: ['command'], },], },
       n: { to: [{ key_code: 'n', modifiers: ['command'], },], },
