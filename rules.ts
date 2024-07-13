@@ -132,8 +132,8 @@ const rules: KarabinerRules[] = [
       comma: { to: [{ key_code: 'tab', modifiers: ['command', 'shift'], },], },
       period: { to: [{ key_code: 'tab', modifiers: ['command'], },], },
       // Move between displays
-      // m: rectangle('previous-display'),
-      // slash: rectangle('next-display'),
+      m: rectangle('previous-display'),
+      slash: rectangle('next-display'),
       // Move between spaces
       k: { to: [{ key_code: 'left_arrow', modifiers: ['control'], },], },
       l: { to: [{ key_code: 'right_arrow', modifiers: ['control'], },], },
