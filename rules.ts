@@ -98,14 +98,11 @@ const rules: KarabinerRules[] = [
   },
   ...createHyperSubLayers({
 
-    // Remap enter to hyper + quote
-    quote: { to: [{ key_code: 'return_or_enter', },], },
-
-    // Remap delete to hyper + colon
-    semicolon: { to: [{ key_code: 'delete_or_backspace', },], },
+    // Remap hyper + quote to delete
+    quote: { to: [{ key_code: 'delete_or_backspace', },], },
 
     // Create new reminder
-    spacebar: open('raycast://extensions/raycast/apple-reminders/create-reminder'),
+    // spacebar: open(''),
 
     // Cursor & scroll control via homerow.app
     a: { to: [{ key_code: 'm', modifiers: ['left_option', 'left_shift'] }], },
@@ -163,13 +160,13 @@ const rules: KarabinerRules[] = [
       n: app('Notes'),
       v: app('Visual Studio Code'),
       t: app('iTerm'),
+      // Entertainment
+      p: app('Tidal'),
       // Work
       s: app('Slack'),
       g: app('Google Chrome'),
       k: app('Airtable'),
       e: app('Figma'),
-      // Entertainment
-      p: app('Tidal'),
     },
 
   // g = 'Games'
@@ -181,17 +178,10 @@ const rules: KarabinerRules[] = [
     c: app("Cuphead"),
   },
 
-    // m = 'Multiple' applications
-    m: {
-      // Rentzap
-    },
-
     // b = 'B'rowse
     b: {
-      y: open('https://www.youtube.com'),
       h: open('https://news.ycombinator.com/news'),
       c: open('https://classpass.com/search'),
-      t: open('https://www.typingclub.com/sportal/program-3.game'),
       s: open('https://client.schwab.com/clientapps/accounts/summary/'),
       n: open('https://app.ynab.com/fe910454-0ccd-4e4d-95f5-fc6f1545d0bf/budget'),
       m: open('https://www.google.com/maps'),
@@ -206,6 +196,13 @@ const rules: KarabinerRules[] = [
       x: { to: [{ shell_command: 'open -a \'Google Chrome\' \'https://xdw0-sipj-awhp.n7.xano.io/workspace/3-0/dashboard\'' }] },
     },
 
+    c: {
+      // Media controls
+      p: { to: [{ key_code: 'play_or_pause' }], },
+      m: { to: [{ key_code: 'fastforward' }], },
+      n: { to: [{ key_code: 'rewind' }], },
+    },
+
     // s = 'System'
     s: {
       // Volume control
@@ -216,10 +213,6 @@ const rules: KarabinerRules[] = [
       k: { to: [{ key_code: 'display_brightness_decrement', },], },
       // Lock screen
       l: { to: [{ key_code: 'q', modifiers: ['right_control', 'right_command'], },], },
-      // Media controls
-      p: { to: [{ key_code: 'play_or_pause' }], },
-      m: { to: [{ key_code: 'fastforward' }], },
-      n: { to: [{ key_code: 'rewind' }], },
       // Emoji picker
       e: { to: [{ key_code: 'spacebar', modifiers: ['right_control', 'right_command'], },], },
       // Mullvad VPN controls
@@ -238,8 +231,6 @@ const rules: KarabinerRules[] = [
       q: open('raycast://extensions/raycast/system/quit-all-applications?launchType=background'),
       // 'N'otifications-Do not disturb toggle
       d: open(`raycast://extensions/yakitrak/do-not-disturb/toggle?launchType=background`),
-      // r = 'R'ead notifications
-      r: open(`raycast://script-commands/d1d5f97ad62a6692d70fc17da0a71157?launchType=background`),
     },
 
     // v = 'moVe' which isn't 'm' because we want it to be on the left hand
@@ -257,6 +248,30 @@ const rules: KarabinerRules[] = [
     // One day this will be for Home Assistant when I can afford a home :)
     h: {},
   }),
+  /* {
+    description: "Change Backspace to Spacebar when Minecraft is focused",
+    manipulators: [
+      {
+        type: "basic",
+        from: {
+          key_code: "delete_or_backspace",
+        },
+        to: [
+          {
+            key_code: "spacebar",
+          },
+        ],
+        conditions: [
+          {
+            type: "frontmost_application_if",
+            file_paths: [
+              "^/Users/luc/Library/Application Support/minecraft/runtime/java-runtime-gamma/mac-os-arm64/java-runtime-gamma/jre.bundle/Contents/Home/bin/java$",
+            ],
+          },
+        ],
+      },
+    ],
+  }, */
 ];
 
 fs.writeFileSync('karabiner.json', JSON.stringify({ global: { show_in_menu_bar: false, }, profiles: [{ name: 'Luc\'s Godly Keyboard', complex_modifications: { rules }, },], }, null, 2));
