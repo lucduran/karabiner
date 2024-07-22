@@ -161,7 +161,7 @@ const rules: KarabinerRules[] = [
       v: app('Visual Studio Code'),
       t: app('iTerm'),
       // Entertainment
-      p: app('Tidal'),
+      p: app('MusicBrainz Picard'),
       // Work
       s: app('Slack'),
       g: app('Google Chrome'),
