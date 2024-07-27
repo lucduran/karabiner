@@ -76,6 +76,115 @@
                   },
                   {
                     "type": "variable_if",
+                    "name": "hyper_sublayer_spacebar",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_a",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_q",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_z",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_f",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_d",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_w",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_o",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_g",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_b",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_c",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_s",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_v",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_h",
+                    "value": 0
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "description": "Hyper Key + spacebar",
+            "manipulators": [
+              {
+                "to": [
+                  {
+                    "shell_command": "open raycast://extensions/mblode/quick-event/index"
+                  }
+                ],
+                "description": "Open raycast://extensions/mblode/quick-event/index",
+                "type": "basic",
+                "from": {
+                  "key_code": "spacebar",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper",
+                    "value": 1
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_quote",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_spacebar",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
                     "name": "hyper_sublayer_a",
                     "value": 0
                   },
@@ -174,6 +283,11 @@
                   {
                     "type": "variable_if",
                     "name": "hyper_sublayer_quote",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_spacebar",
                     "value": 0
                   },
                   {
@@ -280,6 +394,11 @@
                   },
                   {
                     "type": "variable_if",
+                    "name": "hyper_sublayer_spacebar",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
                     "name": "hyper_sublayer_a",
                     "value": 0
                   },
@@ -378,6 +497,11 @@
                   {
                     "type": "variable_if",
                     "name": "hyper_sublayer_quote",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_spacebar",
                     "value": 0
                   },
                   {
@@ -483,6 +607,11 @@
                   },
                   {
                     "type": "variable_if",
+                    "name": "hyper_sublayer_spacebar",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
                     "name": "hyper_sublayer_a",
                     "value": 0
                   },
@@ -580,6 +709,11 @@
                   {
                     "type": "variable_if",
                     "name": "hyper_sublayer_quote",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_spacebar",
                     "value": 0
                   },
                   {
@@ -685,6 +819,11 @@
                   {
                     "type": "variable_if",
                     "name": "hyper_sublayer_quote",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_spacebar",
                     "value": 0
                   },
                   {
@@ -1299,6 +1438,11 @@
                   },
                   {
                     "type": "variable_if",
+                    "name": "hyper_sublayer_spacebar",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
                     "name": "hyper_sublayer_a",
                     "value": 0
                   },
@@ -1631,30 +1775,6 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a 'MusicBrainz Picard.app'"
-                  }
-                ],
-                "description": "Open -a 'MusicBrainz Picard.app'",
-                "type": "basic",
-                "from": {
-                  "key_code": "p",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_o",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
                     "shell_command": "open -a 'Slack.app'"
                   }
                 ],
@@ -1784,6 +1904,11 @@
                   {
                     "type": "variable_if",
                     "name": "hyper_sublayer_quote",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_spacebar",
                     "value": 0
                   },
                   {
@@ -2009,6 +2134,11 @@
                   {
                     "type": "variable_if",
                     "name": "hyper_sublayer_quote",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_spacebar",
                     "value": 0
                   },
                   {
@@ -2403,6 +2533,11 @@
                   },
                   {
                     "type": "variable_if",
+                    "name": "hyper_sublayer_spacebar",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
                     "name": "hyper_sublayer_a",
                     "value": 0
                   },
@@ -2573,6 +2708,11 @@
                   {
                     "type": "variable_if",
                     "name": "hyper_sublayer_quote",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_spacebar",
                     "value": 0
                   },
                   {
@@ -2815,54 +2955,6 @@
               {
                 "to": [
                   {
-                    "shell_command": "open raycast://extensions/0x46616c6b/mullvad/connect?launchType=background"
-                  }
-                ],
-                "description": "Open raycast://extensions/0x46616c6b/mullvad/connect?launchType=background",
-                "type": "basic",
-                "from": {
-                  "key_code": "c",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_s",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "shell_command": "open raycast://extensions/0x46616c6b/mullvad/disconnect?launchType=background"
-                  }
-                ],
-                "description": "Open raycast://extensions/0x46616c6b/mullvad/disconnect?launchType=background",
-                "type": "basic",
-                "from": {
-                  "key_code": "v",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_s",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
                     "shell_command": "open raycast://extensions/mooxl/coffee/caffeinateToggle?launchType=background"
                   }
                 ],
@@ -3016,6 +3108,11 @@
                   {
                     "type": "variable_if",
                     "name": "hyper_sublayer_quote",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_spacebar",
                     "value": 0
                   },
                   {
@@ -3259,6 +3356,11 @@
                   {
                     "type": "variable_if",
                     "name": "hyper_sublayer_quote",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_spacebar",
                     "value": 0
                   },
                   {

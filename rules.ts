@@ -3,48 +3,7 @@ import { KarabinerRules } from './types';
 import { createHyperSubLayers, app, open, rectangle } from './utils';
 
 const rules: KarabinerRules[] = [
-/*  {
-    description: 'Change Alt to Command for a IBM Keyboard',
-    manipulators: [
-      {
-        from: { key_code: 'left_option' },
-        to: [{ key_code: 'left_command' }],
-        // I cannot for the life of me get this to work. For now I will just comment this out so I can use my IBM keyboard.
-        //         conditions: [
-        //           {
-        //             type: 'device_if',
-        //             identifiers: {
-        //               vendor_id: 1203,
-        //               product_id: 12293,
-        //               is_keyboard: true,
-        //             },
-        //           },
-        //         ],
-        type: 'basic',
-      },
-    ],
-  },
-  {
-    description: 'Change Windows Key to Option for a IBM Keyboard',
-    manipulators: [
-      {
-        from: { key_code: 'left_command' },
-        to: [{ key_code: 'left_option' }],
-        // I cannot for the life of me get this to work. For now I will just comment this out so I can use my IBM keyboard.
-        //         conditions: [
-        //           {
-        //             type: 'device_if',
-        //             identifiers: {
-        //               vendor_id: 1203,
-        //               product_id: 12293,ß
-        //               is_keyboard: true,
-        //             },
-        //           },
-        //         ],
-        type: 'basic',
-      },
-    ],
-  }, */
+  
   {
     description: 'Hyper Key (⌃⌥⇧⌘)',
     manipulators: [
@@ -102,7 +61,7 @@ const rules: KarabinerRules[] = [
     quote: { to: [{ key_code: 'delete_or_backspace', },], },
 
     // Create new reminder
-    // spacebar: open(''),
+    spacebar: open('raycast://extensions/mblode/quick-event/index'),
 
     // Cursor & scroll control via homerow.app
     a: { to: [{ key_code: 'm', modifiers: ['left_option', 'left_shift'] }], },
@@ -160,8 +119,6 @@ const rules: KarabinerRules[] = [
       n: app('Notes'),
       v: app('Visual Studio Code'),
       t: app('iTerm'),
-      // Entertainment
-      p: app('MusicBrainz Picard'),
       // Work
       s: app('Slack'),
       g: app('Google Chrome'),
@@ -215,9 +172,6 @@ const rules: KarabinerRules[] = [
       l: { to: [{ key_code: 'q', modifiers: ['right_control', 'right_command'], },], },
       // Emoji picker
       e: { to: [{ key_code: 'spacebar', modifiers: ['right_control', 'right_command'], },], },
-      // Mullvad VPN controls
-      c: open('raycast://extensions/0x46616c6b/mullvad/connect?launchType=background'),
-      v: open('raycast://extensions/0x46616c6b/mullvad/disconnect?launchType=background'),
       // Caffeinate toggle
       // a = 'A'wake
       a: open('raycast://extensions/mooxl/coffee/caffeinateToggle?launchType=background'),
@@ -248,30 +202,6 @@ const rules: KarabinerRules[] = [
     // One day this will be for Home Assistant when I can afford a home :)
     h: {},
   }),
-  /* {
-    description: "Change Backspace to Spacebar when Minecraft is focused",
-    manipulators: [
-      {
-        type: "basic",
-        from: {
-          key_code: "delete_or_backspace",
-        },
-        to: [
-          {
-            key_code: "spacebar",
-          },
-        ],
-        conditions: [
-          {
-            type: "frontmost_application_if",
-            file_paths: [
-              "^/Users/luc/Library/Application Support/minecraft/runtime/java-runtime-gamma/mac-os-arm64/java-runtime-gamma/jre.bundle/Contents/Home/bin/java$",
-            ],
-          },
-        ],
-      },
-    ],
-  }, */
 ];
 
 fs.writeFileSync('karabiner.json', JSON.stringify({ global: { show_in_menu_bar: false, }, profiles: [{ name: 'Luc\'s Godly Keyboard', complex_modifications: { rules }, },], }, null, 2));
