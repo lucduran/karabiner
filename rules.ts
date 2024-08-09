@@ -119,6 +119,7 @@ const rules: KarabinerRules[] = [
       n: app('Notes'),
       v: app('Visual Studio Code'),
       t: app('iTerm'),
+      p: app('PyCharm CE'),
       // Work
       s: app('Slack'),
       g: app('Google Chrome'),
@@ -146,6 +147,8 @@ const rules: KarabinerRules[] = [
       a: open('https://www.amazon.com/'),
       p: open('https://www.perplexity.ai/'),
       g: open('https://github.com/lucduran/'),
+      y: open('https://www.youtube.com/'),
+      l: open('https://learning.edx.org/course/course-v1:HarvardX+CS50P+Python/home'),
       u: { to: [{ shell_command: '/opt/homebrew/bin/code -n ~/.config' }] },
       // 'W'eWeb
       w: { to: [{ shell_command: 'open -a \'Google Chrome\' \'https://editor.weweb.io/47aa0874-ee85-4f94-bdd0-4d864392c9a1\'' }] },
